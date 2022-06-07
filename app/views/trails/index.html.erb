@@ -1,7 +1,8 @@
 <h2>Trails</h2>
 <% @trails.each do |t| %>
-  <li style='list-style: none;'>Name: <%= t.name %></li>
-  <li style='list-style: none;'>Distance: <%= t.distance %>Km</li>
-  <li style='list-style: none;'>Mpde: <%= t.mode %></li>
+  <li style='list-style: none;'><%= t.name %></li>
+  <li style='list-style: none;'><%= t.distance %></li>
+  <li style='list-style: none;'>  <%= t.mode %></li>
   <%= link_to "Show me more", trail_path(t), class: 'btn btn-outline-success' %>
+  <%= link_to "Edit this trail", edit_trail_path(t), class: 'btn btn-outline-success' %>
 <% end %>
