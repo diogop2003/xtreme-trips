@@ -4,7 +4,6 @@ class CreateTrails < ActiveRecord::Migration[6.1]
       t.string :mode
       t.float :distance
       t.string :name
-      t.references :group, null: false, foreign_key: true
 
       t.timestamps
     end
