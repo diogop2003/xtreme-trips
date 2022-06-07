@@ -1,8 +1,7 @@
 <h2>Trails</h2>
 <% @trails.each do |t| %>
-  <li>
-    <ul><%= t.name %>
-    <%= t.distance %>
-    <%= t.mode %></ul>
-  </li>
+  <li style='list-style: none;'><%= t.name %></li>
+  <li style='list-style: none;'><%= t.distance %></li>
+  <li style='list-style: none;'>  <%= t.mode %></li>
+  <%= link_to "Show me more", "/trails/:id", class: 'btn btn-outline-success' %>
 <% end %>

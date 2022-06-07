@@ -3,6 +3,10 @@ class TrailsController < ApplicationController
     @trails = Trail.all
   end
 
+  def show
+    @trail = Trail.find(params[id])
+  end
+
   def new
     @trail = Trail.new
   end
