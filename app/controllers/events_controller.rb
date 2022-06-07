@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  def index 
+  def index
     @events = Event.all
   end
 
@@ -18,6 +18,22 @@ class EventsController < ApplicationController
       redirect_to events_path, notice: "Your events was updated!"
     else
       render :edit
+    end
+  end
+  
+  def new
+    @trail = Trail.find(params[:trail_id])
+    @event = Event.new
+  end
+
+  def create
+    @trail = Trail.find(params[:trail_id])
+    @event = Event.new(event_params)
+    @event.trail = @trail
+    if @event.save
+      redirect_to root_path, notice: "Your event was created!"
+    else
+      render :new
     end
   end
 
