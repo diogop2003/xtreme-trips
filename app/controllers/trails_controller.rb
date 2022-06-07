@@ -1,15 +1,14 @@
 class TrailsController < ApplicationController
   def index
-    @trails = Trails.all
+    @trails = Trail.all
   end
 
   def new
-    @trails = Trails.new
-
+    @trails = Trail.new
   end
 
   def create
-    @trails = Trails.new(trails_params)
+    @trails = Trail.new(trails_params)
     if @trails.save
       redirect_to root_path, notice: "Your trails was created!"
     else
@@ -18,17 +17,17 @@ class TrailsController < ApplicationController
   end
 
   def destroy
-    @trails = Trails.find(params[:id])
+    @trails = Trail.find(params[:id])
     @trails.destroy
     redirect_to trails_path, alert: "Your trails has been deleted"
   end
 
   def edit
-    @trails = Trails.find(params[:id])
+    @trails = Trail.find(params[:id])
   end
 
   def update
-    @trails = Trails.find(params[:id])
+    @trails = Trail.find(params[:id])
 
     if @trails.update(trails_params)
       redirect_to trailss_path, notice: "Your trails was updated!"
