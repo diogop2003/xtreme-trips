@@ -4,7 +4,7 @@ class TrailsController < ApplicationController
   end
 
   def show
-    @trail = Trail.find(params[id])
+    @trail = Trail.find(params[:id])
   end
 
   def new
@@ -28,7 +28,7 @@ class TrailsController < ApplicationController
     @trail = Trail.find(params[:id])
 
     if @trail.update(trail_params)
-      redirect_to trailss_path, notice: "Your trails was updated!"
+      redirect_to trails_path, notice: "Your trails was updated!"
     else
       render :edit
     end

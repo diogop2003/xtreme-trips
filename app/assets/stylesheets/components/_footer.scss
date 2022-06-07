@@ -9,10 +9,12 @@
   margin-top: auto;
   bottom: 0;
   width: 100%;
+  position: absolute;
 }
 .footer-links {
   display: flex;
   align-items: center;
+  border-radius: 50%;
 }
 .footer-links a {
   color: rgb(30, 59, 2);
