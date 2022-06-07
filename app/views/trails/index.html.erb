@@ -5,4 +5,5 @@
   <li style='list-style: none;'>  <%= t.mode %></li>
   <%= link_to "Show me more", trail_path(t), class: 'btn btn-outline-success' %>
   <%= link_to "Edit this trail", edit_trail_path(t), class: 'btn btn-outline-success' %>
+  <%= link_to "See events to this trail", trail_events_path(t) %>
 <% end %>
