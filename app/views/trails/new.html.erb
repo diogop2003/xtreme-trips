@@ -1,0 +1,12 @@
+<div class="container">
+  <h2><strong>Create a trail:</strong></h2>
+
+  <%= simple_form_for @trail do |f| %>
+    <%= f.input :name %>
+    <%= f.input :distance %>
+    <%= f.input :mode, :collection => %w[hiking bike horse quad]%>
+
+    <%= f.button :submit, class: "btn btn-success" %>
+  <% end %>
+
+</div>
