@@ -4,4 +4,5 @@
   <li style='list-style: none;'><%= event.name %></li>
   <li style='list-style: none;'><%= event.date %></li>
   <li style='list-style: none;'>  <%= event.trail.name %></li>
+  <%= link_to "Edit", edit_trail_event_path(@trail, event) %>
 <% end %>

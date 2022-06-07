@@ -1,0 +1,49 @@
+
+.content{
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+}
+
+.container-login{
+  width: 300px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.container-login h2{
+  text-align: center;
+}
+
+.logo{
+  width: 270px;
+  height: 270px;
+  margin: 0 auto;
+}
+
+.btn-login{
+  color: #ffffff;
+  border: 1px solid  #ffffff;
+  background-color: #ffffff00;
+  border-radius: 20px;
+  text-decoration: none;
+  padding: 6px 12px;
+}
+
+
+.btn-login:hover{
+  transition: 0.2s;
+  color: #ffffff;
+  background-color: #06c8d9;
+
+}
+
+.btn-container{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+}
+
+.container{
+  color: #ffffff;
+}

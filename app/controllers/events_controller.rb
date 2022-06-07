@@ -1,6 +1,12 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all
+    @trail = Trail.find(params[:trail_id]) 
+    @events = Event.where(trail_id: @trail)
+  end
+  
+  def show
+    @trail = Trail.find(params[:trail_id])
+    @event = Event.find(params[:id])
   end
 
   def show
@@ -34,6 +40,21 @@ class EventsController < ApplicationController
       redirect_to root_path, notice: "Your event was created!"
     else
       render :new
+    end
+  end
+
+  def edit
+    @trail = Trail.find(params[:trail_id])
+    @event = Event.find(params[:id])
+  end
+
+  def update
+    @event = Event.find(params[:id])
+
+    if @event.update(event_params)
+      redirect_to root_path, notice: "Your events was updated!"
+    else
+      render :edit
     end
   end
 
