@@ -8,32 +8,26 @@ class TrailsController < ApplicationController
   end
 
   def new
-    @trails = Trail.new
+    @trail = Trail.new
   end
 
   def create
-    @trails = Trail.new(trails_params)
-    if @trails.save
-      redirect_to root_path, notice: "Your trails was created!"
+    @trail = Trail.new(trail_params)
+    if @trail.save
+      redirect_to trails_path, notice: "Your trails was created!"
     else
       render :new
     end
   end
 
-  def destroy
-    @trails = Trail.find(params[:id])
-    @trails.destroy
-    redirect_to trails_path, alert: "Your trails has been deleted"
-  end
-
   def edit
-    @trails = Trail.find(params[:id])
+    @trail = Trail.find(params[:id])
   end
 
   def update
-    @trails = Trail.find(params[:id])
+    @trail = Trail.find(params[:id])
 
-    if @trails.update(trails_params)
+    if @trail.update(trail_params)
       redirect_to trailss_path, notice: "Your trails was updated!"
     else
       render :edit
@@ -42,7 +36,7 @@ class TrailsController < ApplicationController
 
   private
 
-  def trails_params
-    params.require(:trails).permit(:mode, :distance, :name)
+  def trail_params
+    params.require(:trail).permit(:mode, :distance, :name)
   end
 end
