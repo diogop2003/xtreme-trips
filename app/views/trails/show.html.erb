@@ -1,4 +1,4 @@
 <%= @trail.name %>
 <%= @trail.distance %>
 <%= @trail.mode %>
-<%= link_to '<< back', trails_path %>
+<%= link_to 'Create an Event', new_trail_event_path(@trail), class: 'btn btn-outline-success' %>
