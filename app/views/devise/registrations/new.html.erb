@@ -18,6 +18,19 @@
           <%= f.input :password_confirmation, class: "password-input",
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
+          <%= f.input :name, class: "password-input",
+                      required: true,
+                      input_html: { autocomplete: "name-input" } %>
+          <%= f.input :address, class: "password-input",
+                      required: true,
+                      input_html: { autocomplete: "address-input" } %>
+          <%= f.input :contact, class: "password-input",
+                      required: true,
+                      input_html: { autocomplete: "contact-input" } %>
+          <%= f.input :photo, class: "photo-input",
+                      as: :file,
+                      direct_upload: true,
+                      input_html: { autocomplete: "photo-input" } %>
         </div>
       </div>
       <div class="btn-container justify-content-center d-flex mt-3">
