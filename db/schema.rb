@@ -10,11 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
+ActiveRecord::Schema.define(version: 2022_06_08_183346) do
+=======
 ActiveRecord::Schema.define(version: 2022_06_08_182645) do
+>>>>>>> 5370ddfe3a4ae918a0988d703d5c7c99bc2fbebf
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
+=======
   create_table "checkpoints", force: :cascade do |t|
     t.float "latitude"
     t.float "longitude"
@@ -35,6 +41,7 @@ ActiveRecord::Schema.define(version: 2022_06_08_182645) do
     t.index ["user_id"], name: "index_event_users_on_user_id"
   end
 
+>>>>>>> 5370ddfe3a4ae918a0988d703d5c7c99bc2fbebf
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.bigint "trail_id", null: false
@@ -70,9 +77,12 @@ ActiveRecord::Schema.define(version: 2022_06_08_182645) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+<<<<<<< HEAD
+=======
   add_foreign_key "checkpoints", "trails"
   add_foreign_key "event_users", "events"
   add_foreign_key "event_users", "users"
+>>>>>>> 5370ddfe3a4ae918a0988d703d5c7c99bc2fbebf
   add_foreign_key "events", "trails"
   add_foreign_key "trails", "users"
 end
