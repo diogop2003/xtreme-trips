@@ -7,16 +7,18 @@
   padding: 10px 40px;
   color: rgba(0,0,0,0.3);
   margin-top: auto;
+  position: absolute;
   bottom: 0;
   width: 100%;
-  position: absolute;
   margin-bottom: 0px;
 }
+
 .footer-links {
   display: flex;
   align-items: center;
   border-radius: 50%;
 }
+
 .footer-links a {
   color: rgb(30, 59, 2);
   opacity: 1;
@@ -25,6 +27,7 @@
   padding: 0px 10px;
   border-radius: 50%;
 }
+
 .footer-links a:hover {
   transform: scale(1.5);
 }
