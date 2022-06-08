@@ -4,9 +4,26 @@ class TrailPolicy < ApplicationPolicy
      def resolve
        scope.all
      end
-
-     def new?
-      true
-     end
   end
+
+  def edit?
+    record.user == user
+  end
+
+  def update?
+    record.user == user
+  end
+
+  def create?
+    true
+  end
+
+  def new?
+    true
+  end
+
+  def show?
+    true
+  end
+
 end
