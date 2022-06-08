@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :trails, except: :destroy do
     resources :events
   end
+  get "my_events", to: "events#my", as: "my_events"
 end
