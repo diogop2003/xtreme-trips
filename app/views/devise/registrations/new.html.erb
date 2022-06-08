@@ -1,12 +1,12 @@
 <div class="content" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path("bc.jpg") %>);">
   <div class="container-login" >
-    <img src="https://see.fontimg.com/api/renderfont4/9Y350/eyJyIjoiZnMiLCJoIjo2MSwidyI6MTAwMCwiZnMiOjYxLCJmZ2MiOiIjRkZGRkZGIiwiYmdjIjoiIzFCMUIxQiIsInQiOjF9/c2luZyB1cA/grooved-personal-use-regular.png" alt="Cool fonts" class="title-singup mb-4" ></a>
+    <img src="https://see.fontimg.com/api/renderfont4/9Y350/eyJyIjoiZnMiLCJoIjo2MSwidyI6MTAwMCwiZnMiOjYxLCJmZ2MiOiIjRkZGRkZGIiwiYmdjIjoiIzFCMUIxQiIsInQiOjF9/c2luZyB1cA/grooved-personal-use-regular.png" alt="Cool fonts" class="title-singup mb-4" >
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs">
-        <div class="container">
+        <div class="container-input">
           <%= f.input :email, class: "email-input",
                       required: true,
                       autofocus: true,

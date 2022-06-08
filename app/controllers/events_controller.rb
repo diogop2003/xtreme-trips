@@ -10,7 +10,11 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     authorize @event
   end
-  
+
+  def my
+    @events = current_user.events
+  end
+
   def new
     @trail = Trail.find(params[:trail_id])
     @event = Event.new
