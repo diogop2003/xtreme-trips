@@ -1,3 +1,11 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-<%= link_to "Create a trail", new_trail_path %>
+<div class='container'><h2>Trails</h2>
+<%= link_to "Create a trail", new_trail_path, class: 'btn btn-outline-success' %>
+<% @trails.each do |t| %>
+  <li style='list-style: none;'><%= t.name %></li>
+  <li style='list-style: none;'><%= t.distance %></li>
+  <li style='list-style: none;'>  <%= t.mode %></li>
+  <%= link_to "Show me more", trail_path(t), class: 'btn btn-outline-success' %>
+  <%= link_to "Edit this trail", edit_trail_path(t), class: 'btn btn-outline-success' %>
+  <%= link_to "See events to this trail", trail_events_path(t), class: 'btn btn-outline-success' %>
+<% end %>
+</div>
