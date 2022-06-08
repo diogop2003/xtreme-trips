@@ -1,25 +1,33 @@
-<h2>Sign up</h2>
+<div class="content" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path("bc.jpg") %>);">
+  <div class="container-login" >
+    <img src="https://see.fontimg.com/api/renderfont4/9Y350/eyJyIjoiZnMiLCJoIjo2MSwidyI6MTAwMCwiZnMiOjYxLCJmZ2MiOiIjRkZGRkZGIiwiYmdjIjoiIzFCMUIxQiIsInQiOjF9/c2luZyB1cA/grooved-personal-use-regular.png" alt="Cool fonts" class="title-singup mb-4" ></a>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+      <div class="form-inputs">
+        <div class="container">
+          <%= f.input :email, class: "email-input",
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" }%>
+          <%= f.input :password, class: "password-input",
+                      required: true,
+                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation, class: "password-input",
+                      required: true,
+                      input_html: { autocomplete: "new-password" } %>
+        </div>
+      </div>
+      <div class="btn-container justify-content-center d-flex mt-3">
+        <div class="form-actions">
+          <%= f.button :submit, "Sign up", class: "btn-login" %>
+          <%= render "devise/shared/links" %>
+        </div>
+      </div>
+    <% end %>
+
+
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
