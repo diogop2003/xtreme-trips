@@ -4,16 +4,21 @@
   background-color: #ffffff00;
   border-radius: 20px;
   text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: box-shadow 0.25s ease 0s;
 }
 
 
-.btn-login:hover{
+.btn-login:hover,
+.btn-login:focus{
   transition: 0.2s;
   color: #ffffff;
   background-color: #87B38F;
   border: 1px solid  #87B38F;
   padding: 7px 13px;
-
+  background: linear-gradient(117deg, #3A694D, #87B38F);
+  box-shadow: 0 0.1rem 0.8rem #3A694D;
 }
 
 .btn-login-link{
@@ -23,18 +28,20 @@
   border-radius: 20px;
   text-decoration: none;
   padding: 8px 12px;
+  cursor: pointer;
+  transition: box-shadow 0.25s ease 0s;
 }
 
-
-.btn-login-link:hover{
+.btn-login-link:hover,
+.btn-login-link:focus{
   transition: 0.2s;
   color: #ffffff;
   background-color: #87B38F;
   border: 1px solid  #87B38F;
   padding: 9px 14px;
-
+  background: linear-gradient(117deg, #3A694D, #87B38F);
+  box-shadow: 0 0.1rem 0.8rem #3A694D;
 }
-
 
 .btn-container{
   display: flex;
@@ -42,4 +49,3 @@
   flex-direction: column;
   margin-left: 6px;
 }
-
