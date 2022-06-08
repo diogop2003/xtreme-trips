@@ -1,16 +1,11 @@
 class EventsController < ApplicationController
   def index
-    @trail = Trail.find(params[:trail_id]) 
+    @trail = Trail.find(params[:trail_id])
     @events = Event.where(trail_id: @trail)
   end
-  
-  def show
-    @trail = Trail.find(params[:trail_id])
-    @event = Event.find(params[:id])
-  end
 
-  def show
-    @event = Event.find(params[:trail_id])
+  def my
+    @events = current_user.events
   end
 
   def edit
@@ -26,7 +21,7 @@ class EventsController < ApplicationController
       render :edit
     end
   end
-  
+
   def new
     @trail = Trail.find(params[:trail_id])
     @event = Event.new
