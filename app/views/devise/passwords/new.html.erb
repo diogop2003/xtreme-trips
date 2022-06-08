@@ -1,18 +1,25 @@
-<h2>Forgot your password?</h2>
+<div class="content" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path("bc.jpg") %>);">
+  <div class="container-login" >
+  <img src="https://see.fontimg.com/api/renderfont4/9Y350/eyJyIjoiZnMiLCJoIjoxOSwidyI6MTAwMCwiZnMiOjE5LCJmZ2MiOiIjRkZGRkZGIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/SSBmb3Jnb3QgbXkgcGFzc3dvcmQ/grooved-personal-use-regular.png" alt="Cool fonts" class="title-password mb-5">
+    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <%= f.error_notification %>
 
-<%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
+      <div class="form-inputs">
+        <div class="container-input">
+          <%= f.input :email, class: "email-input",
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" } %>
+        </div>
+      </div>
+      <div class="btn-container mt-3">
+        <div class="form-actions form-reset">
+          <%= f.button :submit, "Password reset", class: "btn-login" %>
+        <div class="shared-links">
+          <%= render "devise/shared/links" %>
+        </div>
+        </div>
+      </div>
+    <% end %>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
