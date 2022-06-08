@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2022_06_08_194735) do
 
   # These are extensions that must be enabled in order to support this database
@@ -42,16 +41,6 @@ ActiveRecord::Schema.define(version: 2022_06_08_194735) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
-
-  create_table "checkpoints", force: :cascade do |t|
-    t.float "latitude"
-    t.float "longitude"
-    t.boolean "start_point"
-    t.boolean "end_point"
-    t.bigint "trail_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["trail_id"], name: "index_checkpoints_on_trail_id"
   end
 
   create_table "event_users", force: :cascade do |t|
@@ -97,4 +86,11 @@ ActiveRecord::Schema.define(version: 2022_06_08_194735) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "event_users", "events"
+  add_foreign_key "event_users", "users"
+  add_foreign_key "events", "trails"
+  add_foreign_key "trails", "users"
 end
