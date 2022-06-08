@@ -9,6 +9,7 @@ class TrailsController < ApplicationController
 
   def new
     @trail = Trail.new
+    authorize @trail
   end
 
   def create
