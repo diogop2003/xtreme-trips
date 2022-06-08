@@ -28,7 +28,7 @@ class TrailsController < ApplicationController
     @trail = Trail.find(params[:id])
 
     if @trail.update(trail_params)
-      redirect_to trails_path, notice: "Your trails was updated!"
+      redirect_to root_path, notice: "Your trails was updated!"
     else
       render :edit
     end
