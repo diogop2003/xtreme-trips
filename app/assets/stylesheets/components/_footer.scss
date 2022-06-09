@@ -3,6 +3,7 @@
   background: #CDE6D1;
   display: flex;
   align-items: center;
+  text-align: center;
   justify-content: space-between;
   height: 140px;
   padding: 10px 10px;
@@ -35,25 +36,6 @@ a:hover {
   color: #bbbbbb;
 }
 
-/* Buttons */
-
-.choose-button {
-  font-size: 16px;
-  font-weight: 400;
-  width: 100%;
-  height: 40px;
-  padding: 0 10px;
-  border: 1px solid #484848;
-  border-radius: 2px;
-  background-color: #000;
-  appearance: none;
-  position: relative;
-}
-
-.remove-padding {
-  padding: 0;
-}
-
 
 /* Social icons list */
 
@@ -63,20 +45,18 @@ a:hover {
   & li {
     display: inline-block;
     padding: 0 5px;
-
-      & a {
-        width: 36px;
-        height: 36px;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 50%;
-
-        &:hover {
-          background-color: rgba(255, 255, 255, 0.2);
-        }
       }
-    }
+}
+.footer-links {
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
 }
 
+.footer-links:hover {
+          background-color: rgba(255, 255, 255, 0.2);
+          transform: scale(1.25);
+        }
 /* Main */
 
 body {
