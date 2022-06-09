@@ -6,25 +6,25 @@ class EventPolicy < ApplicationPolicy
     end
   end
 
- def edit?
-   true
- end
+  def edit?
+    true
+  end
 
- def update?
-   true
- end
+  def update?
+    true
+  end
 
- def create?
-   true
- end
+  def create?
+    true
+  end
 
- def new?
-   true
- end
+  def new?
+    true
+  end
 
- def show?
-   true
- end
+  def show?
+    true
+  end
 
 end
 
