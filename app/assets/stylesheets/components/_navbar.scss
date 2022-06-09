@@ -1,6 +1,9 @@
 .navbar-lewagon {
+  display: flex;
+  flex-wrap: inherit;
+  align-items: center;
+  background-color: #87B38F;
   justify-content: space-between;
-  background: white;
 }
 
 .navbar-lewagon .navbar-collapse {
