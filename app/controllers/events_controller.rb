@@ -12,7 +12,11 @@ class EventsController < ApplicationController
   end
 
   def my
-    @events = current_user.events
+    # @events = current_user.events
+    @user = current_user
+    @events = policy_scope(Event).map do |e|
+      e
+    end
   end
 
   def new
