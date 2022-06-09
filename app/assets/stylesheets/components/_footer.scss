@@ -11,8 +11,11 @@
   color: rgba(255, 255, 255, 0.104);
   margin-top: auto;
   position: absolute;
+  right: 0;
+  left: 0;
   bottom: 0;
   width: 100%;
+  z-index: 9999;
 }
 
 .row {
