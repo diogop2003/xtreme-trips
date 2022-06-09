@@ -1,30 +1,35 @@
 
 .footer {
-  background: #cecece;
+  background:transparent;
+  opacity: 1;
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: space-between;
   height: 140px;
   padding: 10px 10px;
-  color: rgba(0,0,0,0.3);
+  color: rgba(255, 255, 255, 0.104);
   margin-top: auto;
   position: absolute;
+  right: 0;
+  left: 0;
   bottom: 0;
   width: 100%;
+  z-index: 9999;
 }
 
 .row {
   align-items: center;
   text-align: center;
   position: absolute;
-  color: #5b4c4c;
+  background: #cde6d100;
+  color: #B5806D;
 }
 
 .copyrights {
   font-size: 14px;
   font-weight: 400px;
-  color: #3f3434;
+  color: #B5806D;
 }
 
 a:link {
@@ -37,8 +42,6 @@ a:hover {
   color: #bbbbbb;
 }
 
-
-/* Social icons list */
 
 .social {
   margin-bottom: 12px;
