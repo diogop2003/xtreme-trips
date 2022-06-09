@@ -1,13 +1,14 @@
 
 .footer {
-  background: #CDE6D1;
+  background:transparent;
+  opacity: 1;
   display: flex;
   align-items: center;
   text-align: center;
   justify-content: space-between;
   height: 140px;
   padding: 10px 10px;
-  color: rgba(0,0,0,0.3);
+  color: rgba(255, 255, 255, 0.104);
   margin-top: auto;
   position: absolute;
   bottom: 0;
@@ -18,12 +19,14 @@
   align-items: center;
   text-align: center;
   position: absolute;
+  background: #cde6d100;
+  color: #B5806D;
 }
 
 .copyrights {
   font-size: 14px;
   font-weight: 400px;
-  color: #000;
+  color: #B5806D;
 }
 
 a:link {
@@ -36,8 +39,6 @@ a:hover {
   color: #bbbbbb;
 }
 
-
-/* Social icons list */
 
 .social {
   margin-bottom: 12px;
