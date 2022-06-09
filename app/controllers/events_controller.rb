@@ -12,7 +12,8 @@ class EventsController < ApplicationController
   end
 
   def my
-    # @events = policy_scope(Event).where(user_id: current_user.id)
+    # @user = User.joins(event_users: [:event])
+    @events = policy_scope(Event).joins(event_users: [:user])
   end
 
   def new
