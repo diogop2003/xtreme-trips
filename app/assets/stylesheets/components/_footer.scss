@@ -1,22 +1,28 @@
 
-.copyrights {
-  font-size: 14px;
-  font-weight: 400;
-  color: #ffffff;
-}
-
 .footer {
   background: #CDE6D1;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 140px;
-  padding: 10px 40px;
+  padding: 10px 10px;
   color: rgba(0,0,0,0.3);
   margin-top: auto;
   position: absolute;
   bottom: 0;
   width: 100%;
+}
+
+.row {
+  align-items: center;
+  text-align: center;
+  position: absolute;
+}
+
+.copyrights {
+  font-size: 14px;
+  font-weight: 400px;
+  color: #000;
 }
 
 a:link {
@@ -39,7 +45,7 @@ a:hover {
   padding: 0 10px;
   border: 1px solid #484848;
   border-radius: 2px;
-  background-color: transparent;
+  background-color: #000;
   appearance: none;
   position: relative;
 }
@@ -48,17 +54,6 @@ a:hover {
   padding: 0;
 }
 
-.language:before, .currency:before {
-  content: "";
-  width: 0;
-  height: 0;
-  border-left: 7px solid transparent;
-  border-right: 7px solid transparent;
-  border-top: 7px solid #ffffff;
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  }
 
 /* Social icons list */
 
@@ -69,7 +64,7 @@ a:hover {
     display: inline-block;
     padding: 0 5px;
 
-      & svg {
+      & a {
         width: 36px;
         height: 36px;
         border: 1px solid rgba(255, 255, 255, 0.2);
@@ -89,13 +84,4 @@ body {
   background-image: url("");
   color: rgb(255, 255, 255);
   -webkit-font-smoothing: antialiased;
-}
-
-.container {
-  width: 100%;
-  padding: 16px;
-}
-
-.footer {
-  text-align: center;
 }
