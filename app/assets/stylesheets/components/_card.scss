@@ -1,5 +1,5 @@
 .card-trip {
-  background: rgba(204, 252, 215, 0.2);
+  background: #87b38f35;
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 7px );
   -webkit-backdrop-filter: blur( 7px );
@@ -8,8 +8,9 @@
   overflow: hidden;
   margin-bottom: 50px;
   padding: 10px;
+
   &:hover {
-    background: rgba(251, 252, 251, 0.452);
+    background: #87B38F;
   }
 }
 
@@ -35,10 +36,11 @@
 
 .card-trip .card-trip-infos {
   padding: 16px;
-  display: flex;
+  display: inline-block;
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .card-trip-infos .card-trip-user {
@@ -46,4 +48,12 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+.card-btn {
+  display: inline-flex;
+}
+
+.card-avatar{
+  position: relative;
 }
