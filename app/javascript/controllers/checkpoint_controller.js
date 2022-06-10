@@ -15,7 +15,7 @@ export default class extends Controller {
     if ("geolocation" in navigator) {
       
       console.log(this.trailIdValue)
-      this.interval = setInterval( this.gpsBind, 1000)
+      this.interval = setInterval( this.gpsBind, 60000)
     } else {
       alert("I'm sorry, but geolocation services are not supported by your browser.");
     }
