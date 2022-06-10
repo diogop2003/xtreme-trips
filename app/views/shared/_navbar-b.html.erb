@@ -1,0 +1,13 @@
+<div class="bottom-navbar" >
+  <a href="#" >
+    <i class="fas fa-map-marked-alt"></i>
+  </a>
+  <div>
+    <a href="">
+        <%= cl_image_tag current_user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar-bottom dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    </a>
+  </div>
+  <a href="#">
+    <i class="fas fa-comment"></i>
+  </a>
+</div>
