@@ -1,5 +1,5 @@
 .card-trip {
-  background: #87b38f35;
+  background: #eee8e873;
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 7px );
   -webkit-backdrop-filter: blur( 7px );
@@ -8,10 +8,6 @@
   overflow: hidden;
   margin-bottom: 50px;
   padding: 10px;
-
-  &:hover {
-    background: #87B38F;
-  }
 }
 
 .card-trip > img {
