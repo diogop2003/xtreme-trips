@@ -1,8 +1,6 @@
 <div class='container'>
-  <h1>Trails</h1>
-  <%= link_to "Create a trail", new_trail_path, class: 'btn btn-outline-success' %>
   <% @trails.each do |t| %>
-  <%# link_to trail_path(t) do %>
+    
     <div class="card-trip">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
       <div class="card-trip-infos">
@@ -11,9 +9,8 @@
           <p><%= t.distance %> Km</p>
           <p><%= t.mode %></p>
         </div>
-
         <div>
-          <% link_to "Show me more", trail_path(t), class: 'btn btn-outline-success' %>
+            <%= link_to "Show me more", trail_path(t), class: 'btn btn-outline-success' %>
           <% if policy(t).edit? %>
             <%= link_to "Edit this trail", edit_trail_path(t), class: 'btn btn-outline-success' %>
           <% end %>
@@ -22,9 +19,8 @@
         <%= cl_image_tag t.user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       </div>
     </div>
-  <%# end %>
+  </div>
   <% end %>
-    <div id="map"></div>
+  
 </div>
-
-
+<div id="map"></div>

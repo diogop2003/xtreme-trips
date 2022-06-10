@@ -1,10 +1,10 @@
 class EventsController < ApplicationController
   def index
-    @trail = Trail.find(params[:trail_id]) 
+    @trail = Trail.find(params[:trail_id])
     @events = policy_scope(Event).where(trail: @trail)
 
   end
-  
+
   def show
     @trail = Trail.find(params[:trail_id])
     @event = Event.find(params[:id])
@@ -13,7 +13,7 @@ class EventsController < ApplicationController
 
   def my
     # @user = User.joins(event_users: [:event])
-    @events = policy_scope(Event).joins(event_users: [:user])
+    @events = policy_scope(Event)
   end
 
   def new
