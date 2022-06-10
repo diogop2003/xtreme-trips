@@ -1,6 +1,6 @@
 <div class='container'>
   <% @trails.each do |t| %>
-    
+
     <div class="card-trip">
       <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
       <div class="card-trip-infos">
@@ -14,13 +14,13 @@
           <% if policy(t).edit? %>
             <%= link_to "Edit this trail", edit_trail_path(t), class: 'btn btn-outline-success' %>
           <% end %>
-          <%= link_to "See events to this trail", trail_events_path(t), class: 'btn btn-outline-success' %>
+          <%= link_to "Trail's events", trail_events_path(t), class: 'btn btn-outline-success' %>
         </div>
         <%= cl_image_tag t.user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       </div>
     </div>
   </div>
   <% end %>
-  
+
 </div>
 <div id="map"></div>
