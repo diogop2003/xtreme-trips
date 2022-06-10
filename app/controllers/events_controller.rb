@@ -2,7 +2,6 @@ class EventsController < ApplicationController
   def index
     @trail = Trail.find(params[:trail_id])
     @events = policy_scope(Event).where(trail: @trail)
-
   end
 
   def show
