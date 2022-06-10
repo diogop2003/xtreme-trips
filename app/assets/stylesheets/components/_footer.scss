@@ -1,22 +1,21 @@
 
 .footer {
-  background:transparent;
-  opacity: 1;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: space-between;
-  height: 140px;
-  padding: 10px 10px;
-  color: rgba(255, 255, 255, 0.104);
-  margin-top: auto;
-  position: absolute;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  z-index: 1;
-  margin-bottom: 64px;
+    /* background: transparent; */
+    /* opacity: 1; */
+    display: flex;
+    align-items: center;
+    /* text-align: center; */
+    /* justify-content: space-between; */
+    height: 140px;
+    padding: 10px;
+    /* color: rgba(255, 255, 255, 0.106); */
+    /* margin-top: auto; */
+    /* right: 0px; */
+    /* left: 0px; */
+    bottom: 0px;
+    width: 100%;
+    /* z-index: 1; */
+    margin-bottom: 64px;
 }
 
 .row {
