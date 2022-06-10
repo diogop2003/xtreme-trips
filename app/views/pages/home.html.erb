@@ -10,17 +10,21 @@
     <% end %>
     <%= link_to "See events to this trail", trail_events_path(t), class: 'btn btn-outline-success' %>
   <% end %>
-  <div class="absolute">
-    <div class="bottom-navbar" >
-      <a href="#" class="icon-navbar">
-        <img src="https://cdn.icon-icons.com/icons2/619/PNG/512/map-with-placeholder_icon-icons.com_56692.png" alt="">
-      </a>
-      <a href="">
-        <%= cl_image_tag current_user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      </a>
-      <a href="#">
-        <img src="https://cdn-icons-png.flaticon.com/512/61/61498.png" alt="">
-      </a>
-    </div>
+</div>
+<div class="bottom-navbar" >
+  <a href="#" >
+    <%# <img src="https://img.icons8.com/material-outlined/96/undefined/map-marker.png" class="icon-navbar"> %>
+  </a>
+  <div>
+    <a href="">
+    <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar-bottom dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <% else %>
+        <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-bottom dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <% end %>
+    </a>
   </div>
+  <a href="#">
+    <%# <img src="https://cdn-icons-png.flaticon.com/512/61/61498.png" alt="" class="icon-navbar"> %>
+  </a>
 </div>
