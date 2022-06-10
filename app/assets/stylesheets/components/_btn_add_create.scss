@@ -1,0 +1,30 @@
+.container {
+  margin-left: 30px;
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
+
+a {
+  margin: 5px;
+}
+
+.btn-outline-success {
+  font-family: 'Open Sans';
+  color: #3A694D !important;
+  text-transform: uppercase;
+  background: #CDE6D1;
+  padding: 7px;
+  border: 2px solid #3A694D !important;
+  border-radius: 6px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease 0s;
+}
+
+.btn-outline-success:hover {
+  color: #3A694D !important;
+  border-radius: 50px;
+  border-color: #3A694D !important;
+  transition: all 0.6s ease 0s;
+  background-color: #87B38F;
+}
