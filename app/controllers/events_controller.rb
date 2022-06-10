@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  skip_after_action :verify_authorized, only: :my
+
   def index
     @trail = Trail.find(params[:trail_id])
     @events = policy_scope(Event).where(trail: @trail)
@@ -11,8 +13,7 @@ class EventsController < ApplicationController
   end
 
   def my
-    # @user = User.joins(event_users: [:event])
-    @events = policy_scope(Event)
+    @events = current_user.events
   end
 
   def new
@@ -27,6 +28,7 @@ class EventsController < ApplicationController
     @event.trail = @trail
     authorize @event
     if @event.save
+      EventUser.create(event: @event, user: current_user)
       redirect_to root_path, notice: "Your event was created!"
     else
       render :new
