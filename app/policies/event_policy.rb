@@ -1,6 +1,5 @@
 class EventPolicy < ApplicationPolicy
   class Scope < Scope
-
     def resolve
       scope.all
     end
@@ -25,6 +24,4 @@ class EventPolicy < ApplicationPolicy
   def show?
     true
   end
-
 end
-
