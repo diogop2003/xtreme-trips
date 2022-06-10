@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_06_08_194735) do
+ActiveRecord::Schema.define(version: 2022_06_09_171924) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,17 @@ ActiveRecord::Schema.define(version: 2022_06_08_194735) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "checkpoints", force: :cascade do |t|
+    t.float "latitude"
+    t.float "longitude"
+    t.bigint "user_id", null: false
+    t.bigint "trail_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["trail_id"], name: "index_checkpoints_on_trail_id"
+    t.index ["user_id"], name: "index_checkpoints_on_user_id"
   end
 
   create_table "event_users", force: :cascade do |t|
@@ -89,6 +100,8 @@ ActiveRecord::Schema.define(version: 2022_06_08_194735) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "checkpoints", "trails"
+  add_foreign_key "checkpoints", "users"
   add_foreign_key "event_users", "events"
   add_foreign_key "event_users", "users"
   add_foreign_key "events", "trails"
