@@ -18,7 +18,7 @@ class TrailsController < ApplicationController
     @trail.user = current_user
     authorize @trail
     if @trail.save
-      redirect_to trails_path, notice: "Your trails was created!"
+      redirect_to root_path, notice: "Your trails was created!"
     else
       render :new
     end
