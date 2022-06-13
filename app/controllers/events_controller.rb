@@ -4,10 +4,10 @@ class EventsController < ApplicationController
   def index
     @trail = Trail.find(params[:trail_id])
     @events = policy_scope(Event).where(trail: @trail)
+    # raise
   end
 
   def show
-    @trail = Trail.find(params[:trail_id])
     @event = Event.find(params[:id])
     authorize @event
   end
