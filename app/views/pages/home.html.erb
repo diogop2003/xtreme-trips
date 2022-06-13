@@ -1,19 +1,20 @@
 <div class='container'>
   <% @trails.each do |t| %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      <div class="card-trip-infos">
+    <%= link_to trail_path(t), style: "text-decoration: none;" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <div class="card-trip-infos">
           <h2><strong><%= t.name %></strong></h2>
           <p><%= t.distance %> Km</p>
           <p><%= t.mode %></p>
+        </div>
       </div>
-    </div>
 
-    <div class="card-btn">
-          <%= link_to "Show me more", trail_path(t), class: 'btn-card' %>
+      <div class="card-btn">
         <% if policy(t).edit? %>
           <%= link_to "Edit this trail", edit_trail_path(t), class: 'btn-card' %>
         <% end %>
         <%= link_to "Trail's events", trail_events_path(t), class: 'btn-card' %>
-    </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
