@@ -1,8 +1,5 @@
 .card-trip {
-  background: #eee8e873;
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 7px );
-  -webkit-backdrop-filter: blur( 7px );
   border-radius: 10px;
   border: 1px solid rgba( 255, 255, 255, 0.18 );
   overflow: hidden;
@@ -11,30 +8,30 @@
 }
 
 .card-trip > img {
-  height: 200px;
+  height: 100%;
   border-radius: 10px;
   width: 100%;
-  object-fit: cover;
+
 }
 
-.card-trip h2 {
+.card-category  h2 {
   font-size: 28px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-trip p {
+.card-category  p {
   font-size: 16px;
-  opacity: .7;
+  opacity: .8;
   margin: 0;
 }
 
 
-.card-trip .card-trip-infos {
+.card-category  .card-trip-infos {
   padding: 16px;
   display: inline-block;
   justify-content: space-between;
-  align-items: flex-end;
+  text-align: center;
   position: relative;
   grid-template-columns: 1fr 1fr 1fr;
 }
@@ -47,10 +44,23 @@
 }
 
 .card-btn {
-  display: inline-flex;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
 }
 
-.card-avatar{
-  margin-top: 15px;
-  margin-left: 50px;
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
