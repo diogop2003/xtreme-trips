@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     resources :checkpoints, only: %i[create]
     resources :events, only: %i[index new create]
   end
-  resources :events, only: %i[show edit update destroy]
+  resources :events, only: %i[show edit update destroy] do
+    resources :messages, only: :create
+  end
   resources :event_users, only: %i[create]
   get "my_events", to: "events#my", as: "my_events"
 end
