@@ -11,11 +11,12 @@ class TrailsController < ApplicationController
     @trail.checkpoints.order(:created_at)
     #Iterar em cima de todos os checkpoints
     #Para cada checkpoint fazer uma array com lat e long
-    @checkpoints.map do |checkpoint|
-      [checkpoint.latitude, checkpoint.longitude]
+    @array = @checkpoints.map do |checkpoint|
+      [checkpoint.longitude, checkpoint.latitude]
     end
+    @array = @array.uniq
+    @marker = @array.last
     #Colocar essa array dentro de outra Array maior para mandar para view @
-    @array = [@checkpoints]
     authorize @trail
   end
 
