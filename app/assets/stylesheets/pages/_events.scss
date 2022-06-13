@@ -1,0 +1,25 @@
+.event-card{
+  width: 100%;
+  margin-left: 6px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  opacity: 0.8;
+  transition: 0.5s;
+  background-color:#3A694D;
+  .info{
+    opacity: 0;
+  }
+}
+
+.event-card:hover{
+  height: 200px;
+  background-size:contain;
+  opacity: 1 ;
+  transition: 0.5s;
+  .info{
+    color: #fff;
+    opacity: 1;
+    text-align: center;
+    padding: 51px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+}

@@ -1,8 +1,12 @@
-<h1>Events</h1>
-
-<% @events.each do |event| %>
-  <li style='list-style: none;'><%= event.name %></li>
-  <li style='list-style: none;'><%= event.date %></li>
-  <li style='list-style: none;'>  <%= event.trail.name %></li>
-  <%= link_to "Edit", edit_event_path(event), class: "btn btn-outline-success" %>
-<% end %>
+<div class="options">
+  <% @events.each do |event| %>
+  <div class="event-card">   <%# <div class="event-card" style="background-image: url(https://64.media.tumblr.com/dc863faca0faecb405f6040d12734b8d/tumblr_o1logikBAc1qho82wo1_1280.jpg)"> %>
+    <div class="info">
+      <li style='list-style: none;'><%= event.name %></li>
+      <li style='list-style: none;'><%= event.date %></li>
+      <li style='list-style: none;'>  <%= event.trail.name %></li>
+    </div>
+    <%# <%= link_to "Edit", edit_event_path(event), class: "btn btn-outline-success" %>
+  </div>
+  <% end %>
+</div>
