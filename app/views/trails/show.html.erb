@@ -2,7 +2,11 @@
 <%= @trail.distance %>
 <%= @trail.mode %>
 <%= link_to 'Create an Event', new_trail_event_path(@trail), class: 'btn btn-outline-success' %>
-<div id="map"></div>
+<div id="map" 
+  data-controller="map" 
+  data-map-api-key-value=" <%= ENV['MAPBOX_API_KEY']%> " 
+  data-map-array-value="<%= @array %>"
+  data-map-marker-value="<%= @marker %>"></div>
 <div data-controller="checkpoint" data-checkpoint-trail-id-value="<%= @trail.id %>">
   <button data-action="click->checkpoint#start">Start</button>
   <button data-action="click->checkpoint#stop">Stop</button>
