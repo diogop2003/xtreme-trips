@@ -1,26 +1,19 @@
 <div class='container'>
   <% @trails.each do |t| %>
-
-    <div class="card-trip">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-      <div class="card-info-avatar d-flex justfy-content-space-between">
-        <div class="card-trip-infos">
-            <h2><strong><%= t.name %></strong></h2>
-            <p><%= t.distance %> Km</p>
-            <p><%= t.mode %></p>
-        </div>
-        <div class="card-avatar">
-          <%= cl_image_tag t.user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        </div>
-      </div>
-      <div class="card-btn">
-            <%= link_to "Show me more", trail_path(t), class: 'btn btn-outline-success' %>
-          <% if policy(t).edit? %>
-            <%= link_to "Edit this trail", edit_trail_path(t), class: 'btn btn-outline-success' %>
-          <% end %>
-          <%= link_to "Trail's events", trail_events_path(t), class: 'btn btn-outline-success' %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <div class="card-trip-infos">
+          <h2><strong><%= t.name %></strong></h2>
+          <p><%= t.distance %> Km</p>
+          <p><%= t.mode %></p>
       </div>
     </div>
-  <% end %>
 
+    <div class="card-btn">
+          <%= link_to "Show me more", trail_path(t), class: 'btn-card' %>
+        <% if policy(t).edit? %>
+          <%= link_to "Edit this trail", edit_trail_path(t), class: 'btn-card' %>
+        <% end %>
+        <%= link_to "Trail's events", trail_events_path(t), class: 'btn-card' %>
+    </div>
+  <% end %>
 </div>
