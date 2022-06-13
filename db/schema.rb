@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2022_06_08_194735) do
+=======
+ActiveRecord::Schema.define(version: 2022_06_13_153558) do
+>>>>>>> 87d7f9e6fe4064b7a8bc9708afbd47170466a581
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,7 +62,9 @@ ActiveRecord::Schema.define(version: 2022_06_08_194735) do
     t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id"
     t.index ["trail_id"], name: "index_events_on_trail_id"
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "trails", force: :cascade do |t|
@@ -92,5 +98,6 @@ ActiveRecord::Schema.define(version: 2022_06_08_194735) do
   add_foreign_key "event_users", "events"
   add_foreign_key "event_users", "users"
   add_foreign_key "events", "trails"
+  add_foreign_key "events", "users"
   add_foreign_key "trails", "users"
 end
