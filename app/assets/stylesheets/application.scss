@@ -11,7 +11,11 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "mapbox-gl/dist/mapbox-gl";
 
 body {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+
 }

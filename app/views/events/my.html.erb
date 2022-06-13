@@ -2,5 +2,7 @@
   <% @events.each do |event| %>
     <li style='list-style: none;'><%= event.name %></li>
     <%= link_to "Open Event", event_path(event), class: "btn btn-outline-success" %>
+  <div class="gambi_footer">
   <% end %>
+  </div>
 </div>

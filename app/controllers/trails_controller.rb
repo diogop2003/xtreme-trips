@@ -5,6 +5,18 @@ class TrailsController < ApplicationController
 
   def show
     @trail = Trail.find(params[:id])
+    #Achar todos os checkpoints da trail
+    @checkpoints = Checkpoint.where(trail_id: @trail)
+    #Ordenar os checkpoints pelo created_at  @trail.checkpoints.order(:created_at)
+    @trail.checkpoints.order(:created_at)
+    #Iterar em cima de todos os checkpoints
+    #Para cada checkpoint fazer uma array com lat e long
+    @array = @checkpoints.map do |checkpoint|
+      [checkpoint.longitude, checkpoint.latitude]
+    end
+    @array = @array.uniq
+    @marker = @array.last
+    #Colocar essa array dentro de outra Array maior para mandar para view @
     authorize @trail
   end
 
