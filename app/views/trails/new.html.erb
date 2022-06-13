@@ -1,6 +1,10 @@
 <div class="container">
   <h2><strong>Create a trail:</strong></h2>
 
+  <div data-controller="checkpoint" data-checkpoint-trail-id-value="<%= @trail.id %>">
+    <button data-action="click->checkpoint#start">Start</button>
+    <button data-action="click->checkpoint#stop">Stop</button>
+  </div>
 
 
     <%= simple_form_for @trail do |f| %>
