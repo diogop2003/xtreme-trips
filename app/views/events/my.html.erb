@@ -1,3 +1,6 @@
-<% @events.each do |event| %>
-<%= event.name %>
-<% end %>
+<div class='container'>
+  <% @events.each do |event| %>
+    <li style='list-style: none;'><%= event.name %></li>
+    <%= link_to "Open Event", event_path(event), class: "btn btn-outline-success" %>
+  <% end %>
+</div>
