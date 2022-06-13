@@ -7,12 +7,12 @@
   </div>
 
 
-  <%= simple_form_for @trail do |f| %>
-    <%= f.input :name %>
-    <%= f.input :distance %>
-    <%= f.input :mode, :collection => %w[hiking bike horse quad]%>
+    <%= simple_form_for @trail do |f| %>
+      <%= f.input :name %>
+      <%= f.input :distance %>
+      <%= f.input :mode, :collection => %w[Hiking Bike Horse Quad] %>
 
-    <%= f.button :submit, class: "btn btn-outline-success" %>
-  <% end %>
+      <%= f.button :submit, class: "btn btn-outline-success" %>
 
+    <% end %>
 </div>
