@@ -5,19 +5,16 @@ class TrailsController < ApplicationController
 
   def show
     @trail = Trail.find(params[:id])
-    #Achar todos os checkpoints da trail
-    @checkpoints = Checkpoint.where(trail_id: @trail)
-    #Ordenar os checkpoints pelo created_at  @trail.checkpoints.order(:created_at)
+    @checkpoints = Checkpoint.where(trail: @trail).to_a
     @trail.checkpoints.order(:created_at)
-    #Iterar em cima de todos os checkpoints
-    #Para cada checkpoint fazer uma array com lat e long
-    @array = @checkpoints.map do |checkpoint|
-      [checkpoint.longitude, checkpoint.latitude]
-    end
-    @array = @array.uniq
-    @marker = @array.last
-    #Colocar essa array dentro de outra Array maior para mandar para view @
     authorize @trail
+    unless @checkpoints.empty?
+      @array = @checkpoints.map do |checkpoint|
+        [checkpoint.longitude, checkpoint.latitude]
+      end
+      @array = @array.uniq
+      @marker = @array.last
+  end
   end
 
   def new
@@ -30,12 +27,6 @@ class TrailsController < ApplicationController
     @trail.user = current_user
     authorize @trail
     if @trail.save
-      @checkpoint = Checkpoint.new
-      @checkpoint.trail = @trail
-      @checkpoint.user = current_user
-      @checkpoint.latitude = current_user.lat
-      @checkpoint.longitude = params[:long]
-      @checkpoint.save!
       redirect_to root_path, notice: "Your trails was created!"
     else
       render :new
@@ -61,6 +52,6 @@ class TrailsController < ApplicationController
   private
 
   def trail_params
-    params.require(:trail).permit(:mode, :distance, :name)
+    params.require(:trail).permit(:mode, :distance, :name, :photo)
   end
 end
