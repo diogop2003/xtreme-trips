@@ -4,8 +4,13 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.event = @event
     @message.user = current_user
+    authorize @message
     if @message.save
-      redirect_to event_path(@event, anchor: "message-#{@message.id}")
+      EventChannel.broadcast_to(
+        @event,
+        render_to_string(partial: "message", locals: {message: @message})
+      )
+      head :ok
     else
       render "events/show"
     end
