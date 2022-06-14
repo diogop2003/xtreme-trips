@@ -4,6 +4,10 @@
     <%= simple_form_for @trail do |f| %>
       <%= f.input :name %>
       <%= f.input :distance %>
+      <%= f.input :photo, class: "photo-input",
+                      as: :file,
+                      direct_upload: true,
+                      input_html: { autocomplete: "photo-input" } %>
       <%= f.input :mode, :collection => %w[Hiking Bike Horse Quad] %>
 
       <%= f.button :submit, class: "btn btn-outline-success", data: {action: "submit->checkpoint#start", checkpoint_target: "form"} %>
