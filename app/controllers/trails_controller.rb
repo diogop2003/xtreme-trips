@@ -17,6 +17,11 @@ class TrailsController < ApplicationController
     end
   end
 
+  def my
+    @trails = current_user.trails
+    authorize @trails
+  end
+
   def new
     @trail = Trail.new
     authorize @trail
