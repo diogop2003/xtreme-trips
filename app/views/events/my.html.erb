@@ -1,7 +1,13 @@
-<div class='container'>
+<div class='events-container'>
   <% @events.each do |event| %>
-    <li style='list-style: none;'><%= event.name %></li>
-    <%= link_to "Open Event", event_path(event), class: "btn btn-outline-success" %>
+  <div class="event-card">
+    <h2><strong><%= event.name %></strong></h2>
+    <div class="info">
+      <li style='list-style: none;'><strong><%= event.date %></strong></li>
+       <%# <%= link_to "Open Event", event_path(event), class: "btn btn-outline-success" %>
+      <li style='list-style: none;'><strong><%= event.trail.name %></li>
+    </div>
+  </div>
   <div class="gambi_footer">
   <% end %>
   </div>
