@@ -1,4 +1,4 @@
-<h1 class="text-center">Events</h1>
+<h1 class="events text-center">Events</h1>
   <%= link_to "Back", root_path, class: "btn btn-outline-success" %>
 
 <% @events.each do |event| %>
@@ -8,15 +8,13 @@
       <li style='list-style: none;'><%= event.date %></li>
       <li style='list-style: none;'><%= event.trail.name %></li>
     </div>
-
-  <% if event.users.first == current_user %>
-    <%= link_to "Edit", edit_event_path(event), class: "btn btn-outline-success" %>
-  <% end %>
-  <% if event.users.include?(current_user) %>
-    <%= link_to "Join", event_path(event), class: "btn btn-outline-success" %>
-  <% else %>
-    <%= link_to "Join", event_users_path(param: event), method: :post, class: "btn btn-outline-success" %>
-
-  <% end %>
+    <% if event.users.first == current_user %>
+      <%= link_to "Edit", edit_event_path(event), class: "btn btn-outline-success" %>
+    <% end %>
+    <% if event.users.include?(current_user) %>
+      <%= link_to "Join", event_path(event), class: "btn btn-outline-success" %>
+    <% else %>
+      <%= link_to "Join", event_users_path(param: event), method: :post, class: "btn btn-outline-success" %>
+    <% end %>
   </div>
 <% end %>
