@@ -31,7 +31,7 @@
 
 
 
-.event-card:hover{
+.event-card-2{
   height: 600px;
   background-size: cover;
   background-repeat: no-repeat;
@@ -51,8 +51,9 @@
 
 }
 
-.event-card:hover h2{
+.event-card-2 h2{
   opacity: 0;
+  transition: 0.2s;
 }
 
 // .info-hover:hover{
