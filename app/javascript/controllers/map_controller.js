@@ -11,11 +11,12 @@ export default class extends Controller {
   connect() {
     console.log("CONECTOU")
     mapboxgl.accessToken = 'pk.eyJ1IjoiaGVpdG9yLWNvY2EiLCJhIjoiY2w0N2Q1djh2MGI4czNkcnljcWEybGJpeiJ9.zMcxCyfzHYKdplZPO7OGfQ';
+    // console.log(this.markerValue)
     this.map = new mapboxgl.Map({
       container: this.element, // container ID
       style: 'mapbox://styles/mapbox/streets-v10', // style URL
       center: this.markerValue, // starting position [lng, lat]
-      zoom: 12 // starting zoom
+      zoom: 16 // starting zoom
     });
 
     new mapboxgl.Marker()
