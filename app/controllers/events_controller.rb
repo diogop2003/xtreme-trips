@@ -8,6 +8,7 @@ class EventsController < ApplicationController
   end
 
   def show
+    @message = Message.new
     @event = Event.find(params[:id])
     authorize @event
   end
