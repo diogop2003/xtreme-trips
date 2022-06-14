@@ -2,20 +2,24 @@ import { csrfToken } from "@rails/ujs"
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ ]
+  static targets = [ "form" ]
   static values = {
     trailId: Number
   }
 
   connect() {
     this.gpsBind = this.gps.bind(this)
+    // this.formTarget
+    // this.start()
   }
 
   start() {
+    console.log("ENTREI AQUI")
+    
     if ("geolocation" in navigator) {
       
       console.log(this.trailIdValue)
-      this.interval = setInterval( this.gpsBind, 10000)
+      this.interval = setInterval( this.gpsBind, 1000)
     } else {
       alert("I'm sorry, but geolocation services are not supported by your browser.");
     }
@@ -23,6 +27,7 @@ export default class extends Controller {
   }
 
   stop() {
+    console.log("ENTREI AQUI")
     clearInterval(this.interval);
   }
 
