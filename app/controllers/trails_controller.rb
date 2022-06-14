@@ -30,12 +30,6 @@ class TrailsController < ApplicationController
     @trail.user = current_user
     authorize @trail
     if @trail.save
-      @checkpoint = Checkpoint.new
-      @checkpoint.trail = @trail
-      @checkpoint.user = current_user
-      @checkpoint.latitude = current_user.lat
-      @checkpoint.longitude = params[:long]
-      @checkpoint.save!
       redirect_to root_path, notice: "Your trails was created!"
     else
       render :new
