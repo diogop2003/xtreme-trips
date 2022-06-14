@@ -1,4 +1,4 @@
-<div class='events-container'>
+<div class='events-container' data_controller="MyEvents">
   <% @events.each do |event| %>
   <div class="event-card">
     <h2><strong><%= event.name %></strong></h2>
@@ -8,7 +8,5 @@
       <li style='list-style: none;'><strong><%= event.trail.name %></li>
     </div>
   </div>
-  <div class="gambi_footer">
   <% end %>
-  </div>
 </div>
