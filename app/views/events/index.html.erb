@@ -1,12 +1,22 @@
-<div class="options">
-  <% @events.each do |event| %>
-  <div class="event-card" style="background-image: url(Xtreme trips.png)">
-    <div class="info">
+<h1 class="text-center">Events</h1>
+  <%= link_to "Back", root_path, class: "btn btn-outline-success" %>
+
+<% @events.each do |event| %>
+  <div class="events_list_btn">
+    <div class="events_list">
       <li style='list-style: none;'><%= event.name %></li>
       <li style='list-style: none;'><%= event.date %></li>
-      <li style='list-style: none;'>  <%= event.trail.name %></li>
+      <li style='list-style: none;'><%= event.trail.name %></li>
     </div>
-    <%# <%= link_to "Edit", edit_event_path(event), class: "btn btn-outline-success" %>
-  </div>
+
+  <% if event.users.first == current_user %>
+    <%= link_to "Edit", edit_event_path(event), class: "btn btn-outline-success" %>
   <% end %>
-</div>
+  <% if event.users.include?(current_user) %>
+    <%= link_to "Join", event_path(event), class: "btn btn-outline-success" %>
+  <% else %>
+    <%= link_to "Join", event_users_path(param: event), method: :post, class: "btn btn-outline-success" %>
+
+  <% end %>
+  </div>
+<% end %>

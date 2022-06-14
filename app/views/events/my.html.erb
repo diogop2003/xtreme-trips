@@ -1,5 +1,6 @@
 <div class='events-container' data-controller="events">
   <% @events.each do |event| %>
+<<<<<<< HEAD
   <div class="event-card" data-events-target="card" data-action="click->events#open" >
     <h2><strong><%= event.name %></strong></h2>
     <div class="info">
@@ -8,5 +9,9 @@
       <li style='list-style: none;'><strong><%= event.trail.name %></li>
     </div>
   </div>
+=======
+    <li style='list-style: none;'><%= event.name %></li>
+    <%= link_to "Open Event", event_path(event), class: "btn btn-outline-success" %>
+>>>>>>> 10edb22aa9ccb4624bbafc8c1ccef4ef068a27a6
   <% end %>
 </div>
