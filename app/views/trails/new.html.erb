@@ -1,16 +1,12 @@
-<div class="container">
+<div class="container" data-controller="checkpoint">
   <h2><strong>Create a trail:</strong></h2>
-
-  <div data-controller="checkpoint" data-checkpoint-trail-id-value="<%= @trail.id %>">
-    <button data-action="click->checkpoint#start">Start</button>
-    <button data-action="click->checkpoint#stop">Stop</button>
-  </div>
-
 
     <%= simple_form_for @trail do |f| %>
       <%= f.input :name %>
       <%= f.input :distance %>
       <%= f.input :mode, :collection => %w[Hiking Bike Horse Quad] %>
-      <%= f.button :submit, class: "btn btn-outline-success" %>
+
+      <%= f.button :submit, class: "btn btn-outline-success", data: {action: "submit->checkpoint#start", checkpoint_target: "form"} %>
+
     <% end %>
 </div>
