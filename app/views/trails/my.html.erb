@@ -1,0 +1,6 @@
+<div class='container'>
+  <% @trails.each do |trail| %>
+    <li style='list-style: none;'><%= trail.name %></li>
+    <%= link_to "Open Trail", trail_path(trail), class: "btn btn-outline-success" %>
+  <% end %>
+</div>

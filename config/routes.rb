@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   end
   resources :event_users, only: %i[create]
   get "my_events", to: "events#my", as: "my_events"
+  get "my_trails", to: "trails#my", as: "my_trails"
 end
