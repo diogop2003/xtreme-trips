@@ -14,7 +14,7 @@ class TrailsController < ApplicationController
       end
       @array = @array.uniq
       @marker = @array.last
-  end
+    end
   end
 
   def new
@@ -27,7 +27,7 @@ class TrailsController < ApplicationController
     @trail.user = current_user
     authorize @trail
     if @trail.save
-      redirect_to root_path, notice: "Your trails was created!"
+      redirect_to new_trail_checkpoint_path(@trail), notice: "Your trails was created!"
     else
       render :new
     end
