@@ -1,7 +1,7 @@
 <div class='container'>
   <% @trails.each do |t| %>
     <%= link_to trail_path(t), style: "text-decoration: none;" do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      <div class="card-category" style="background-image: url(<%= cl_image_path t.photo.key %>)">
         <div class="card-trip-infos">
           <h2><strong><%= t.name %></strong></h2>
           <p><%= t.distance %> Km</p>

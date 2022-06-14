@@ -16,13 +16,13 @@ export default class extends Controller {
       container: this.element, // container ID
       style: 'mapbox://styles/mapbox/streets-v10', // style URL
       center: this.markerValue, // starting position [lng, lat]
-      zoom: 16 // starting zoom
+      zoom: 12 // starting zoom
     });
 
     new mapboxgl.Marker()
       .setLngLat(this.markerValue)
       .addTo(this.map)
-    
+
     this.map.on('load', () => {
       this.map.addSource('route', {
         'type': 'geojson',
@@ -51,7 +51,3 @@ export default class extends Controller {
     });
  };
 };
-
-
-
-
