@@ -14,7 +14,12 @@ class TrailsController < ApplicationController
       end
       @array = @array.uniq
       @marker = @array.last
+    end
   end
+
+  def my
+    @trails = current_user.trails
+    authorize @trails
   end
 
   def new
