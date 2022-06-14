@@ -7,8 +7,9 @@ export default class extends Controller {
     console.log("CONECTOU")
   }
 
-  open() {
-    this.cardTarget.classList.toggle('event-card-2');
+  open(event) {
+    console.log(event.target.parentNode)
+    event.target.parentNode.classList.toggle('event-card-2');
   }
 
 }
