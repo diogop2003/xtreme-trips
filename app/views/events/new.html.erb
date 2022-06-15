@@ -1,8 +1,10 @@
 <div class="container">
-  <h1><strong>Create an Event:</strong></h1>
-  <%= simple_form_for [@trail, @event] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
-    <%= f.button :submit, class: "btn btn-login" %>
-  <% end %>
+  <div class="glass">
+    <h1><strong>Create an Event:</strong></h1>
+    <%= simple_form_for [@trail, @event] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :date %>
+      <%= f.button :submit, class: "btn btn-login" %>
+    <% end %>
+  </div>
 </div>

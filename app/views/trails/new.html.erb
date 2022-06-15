@@ -1,6 +1,7 @@
 <div class="container" data-controller="checkpoint">
-  <h1><strong>Create a trail:</strong></h1>
-
+  
+  <div class="glass">
+    <h1><strong>Create a trail:</strong></h1>
     <%= simple_form_for @trail do |f| %>
       <%= f.input :name %>
       <%= f.input :distance %>
@@ -13,4 +14,5 @@
       <%= f.button :submit, class: "btn btn-login" %>
 
     <% end %>
+  </div>
 </div>
