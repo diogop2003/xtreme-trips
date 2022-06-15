@@ -1,6 +1,10 @@
 <div class="container event"
   data-controller="event-subscription"
   data-event-subscription-event-id-value="<%= @event.id %>">
+  
+    <% if @event.users.first == current_user %>
+      <%= link_to "Edit", edit_event_path(@event), class: "btn btn-login" %>
+    <% end %>
   <h1 class="event-message"><%= @event.name %></h1>
   <div class="messages" data-event-subscription-target="messages">
   <% @event.messages.each do |message| %>

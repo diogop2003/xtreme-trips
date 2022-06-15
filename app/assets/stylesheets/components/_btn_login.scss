@@ -1,9 +1,8 @@
 .btn-login{
-  color: #1C5428;
-  border: 3px solid #1C5428;
+  color: #fff;
   padding: 9px 30px;
   font-size: 19px;
-  background-color: #ffffff;
+  background: linear-gradient(117deg, #1C5428, #357442);
   border-radius: 21px;
   text-decoration: none;
   font-weight: 100;
@@ -14,16 +13,10 @@
 }
 
 
-.btn-login:hover,
-.btn-login:focus{
-  transition: 0.2s;
-  color: #ffffff;
-  background-color: #87B38F;
-  border: 1px solid  #87B38F;
-  padding: 7px 13px;
-  background: linear-gradient(117deg, #3A694D, #87B38F);
-  box-shadow: 0 0.1rem 0.8rem #3A694D;
+.container {
+  background-color: #F7F7F7;
 }
+
 
 .btn-login-link{
   color: #ffffff;

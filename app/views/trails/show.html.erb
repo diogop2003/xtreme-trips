@@ -1,13 +1,19 @@
-<div class="card-btn">
-  <%= link_to "Trail's events", trail_events_path(@trail), class: 'btn-card' %>
-  <%= link_to 'Create an Event', new_trail_event_path(@trail), class: 'btn-card' %>
+  <li style='list-style: none;'><h1><%= @trail.name %></h1></li>
+<% trail_class = trail_type(@trail.mode) %>
+<li style='list-style: none;'><h4><i class="<%= trail_class %>"></i></h4></li>
+<li style='list-style: none;'><h4><%= @trail.distance %>km</h4></li>
+  <div class="card-btn">
+    <%= link_to "Trail's events", trail_events_path(@trail), class: 'btn-card' %>
+    <%= link_to 'Create an Event', new_trail_event_path(@trail), class: 'btn-card' %>
+  </div>
+<div class="map-card">
+  <div id="map"
+    data-controller="map"
+    data-map-api-key-value=" <%= ENV['MAPBOX_API_KEY']%> "
+    data-map-array-value="<%= @array %>"
+    data-map-marker-value="<%= @marker %>">
+  </div>
 </div>
   <% if policy(@trail).edit? %>
     <%= link_to "Edit this trail", edit_trail_path(@trail), class: 'btn-card', id: 'btn-edit' %>
   <% end %>
-<div id="map"
-  data-controller="map"
-  data-map-api-key-value=" <%= ENV['MAPBOX_API_KEY']%> "
-  data-map-array-value="<%= @array %>"
-  data-map-marker-value="<%= @marker %>">
-</div>

@@ -1,12 +1,11 @@
-
-<div class="container">
-  <div id="map" 
-    data-controller="map" 
-    data-map-api-key-value=" <%= ENV['MAPBOX_API_KEY']%> " 
+<div class="map-card" id="map-checkpoint">
+  <div id="map"
+    data-controller="map"
+    data-map-api-key-value=" <%= ENV['MAPBOX_API_KEY']%> "
     data-map-array-value="<%= @array.present? ? @array : [] %>">
   </div>
-  <div class="start-stop" data-controller="checkpoint" data-checkpoint-trail-id-value="<%= @trail.id %>">
-    <%= button_tag "Start", data: {action: "click->checkpoint#start"}, class: "btn btn-success", style: "border-radius: 50%; margin-right: 10px;" %>
-    <%= button_tag "Stop", data: {action: "click->checkpoint#stop"}, class: "btn btn-danger", style: "border-radius: 50%; margin-left: 10px;" %>
-  </div>
+</div>
+<div data-controller="checkpoint" data-checkpoint-trail-id-value="<%= @trail.id %>">
+  <%= button_tag "Start", data: {action: "click->checkpoint#start"} %>
+  <%= button_tag "Stop", data: {action: "click->checkpoint#stop"} %>
 </div>
