@@ -1,4 +1,5 @@
 class CheckpointsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: :create
   def create
     @trail = Trail.find(params[:trail_id])
     @checkpoint = Checkpoint.new

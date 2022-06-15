@@ -1,11 +1,11 @@
 <div class="container" data-controller="checkpoint">
-  
+
   <div class="glass">
     <h1><strong>Create a trail:</strong></h1>
     <%= simple_form_for @trail do |f| %>
       <%= f.input :name %>
       <%= f.input :distance %>
-      <%= f.input :photo, class: "photo-input", label_html: { class: 'add_photo_label' },
+      <%= f.input :photo, label: "Photo +", class: "photo-input", label_html: { class: 'add_photo_label' },
                       as: :file,
                       direct_upload: true,
                       input_html: { autocomplete: "photo-input" } %>
