@@ -73,3 +73,27 @@
 .user-name {
   margin: 5px;
 }
+
+
+
+.info-card{
+  border-top: 1px solid rgba(199, 199, 199, 0.986);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.info-card h2{
+  padding-top: 5px ;
+  font-weight: bold;
+}
+
+.info-card p{
+  padding-left: 49px;
+}
+
+.indo-icon{
+  text-align: center;
+}
+
+.user-card{
+  border-bottom: 1px solid rgba(199, 199, 199, 0.986);
+}
