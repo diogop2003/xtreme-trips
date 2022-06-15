@@ -1,0 +1,118 @@
+.events-container{
+  min-height: 100vh;
+  display: block;
+  position: relative;
+  background-color: #1d682d;
+
+  .title-events h2{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 50px;
+    color: #fff;
+    padding: 5px;
+
+  }
+
+}
+
+
+.event-card{
+  .accordion-button{
+    background-color: #1C5428;
+    color: #fff;
+    background-image: none;
+    font-size: 26px;
+    padding-left: 100px;
+  }
+
+  .accordion-button:focus {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 0 #1C5428;;
+  }
+
+  .accordion-button:not(.collapsed) {
+    color: #ffffff;
+    font-size: 26px;
+    padding-left: 100px;
+  }
+
+  .accordion-button::after {
+    background-image: none;
+  }
+
+  .accordion-button:not(.collapsed)::after {
+  background-image: none;
+  transform: rotate(-180deg);
+  }
+
+}
+.accordion-body {
+  text-align: center;
+  padding: 21px;
+  margin: 0 auto;
+  background-color: #1C5428;
+  color: #fff;
+  font-size: 24px;
+}
+
+.accordion-item:last-of-type {
+    border-bottom-right-radius: 0px ;
+    border-bottom-left-radius: 0px ;
+}
+.accordion-item:first-of-type {
+    border-top-left-radius: 0px ;
+    border-top-right-radius: 0px ;
+}
+.accordion-item {
+    background-color: #1C5428 ;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+    .info {
+      margin-bottom: 17px;
+    }
+}
+
+
+
+
+.event-card h2{
+  color: #fff;
+  font-size: 35px;
+  text-align: center;
+}
+
+
+
+.event-card-2{
+  height: 600px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 1 ;
+  background-image: url("Xtreme trips.png");
+  border: 0;
+  .info{
+    color: rgba(255, 255, 255, 0.705);
+    opacity: 1;
+    text-align: center;
+    padding-top: 90px;
+    font-size: 45px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-family: 'Inconsolata', monospace;
+  }
+
+}
+
+.event-card-2 h2{
+  opacity: 0;
+}
+
+// .info-hover:hover{
+//   color: #fff;
+//   opacity: 1;
+//   text-align: center;
+//   padding-top: 151px;
+//   font-size: 30px;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+//   opacity: 1;
+// }
