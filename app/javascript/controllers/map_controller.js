@@ -2,10 +2,12 @@ import { Controller } from "stimulus"
 import mapboxgl from "!mapbox-gl"
 
 export default class extends Controller {
+  static targets = ["map"]
   static values = {
     trailId: Number,
     apiKey: String,
     array: Array,
+    icon: String,
   }
   
   connect() {
@@ -22,6 +24,7 @@ export default class extends Controller {
   };
 
   start() {
+    console.log("CONECTOU START")
     
     if ("geolocation" in navigator) {
       this.interval = setInterval( this.gpsBind, 10000)
@@ -31,10 +34,12 @@ export default class extends Controller {
   }
 
   stop() {
+    console.log("CONECTOU STOP")
     clearInterval(this.interval);
   }
 
   gps() {
+    console.log("CONECTOU GPS")
     const url = `/trails/${this.trailIdValue}/checkpoints`
     navigator.geolocation.getCurrentPosition((position) => {
       const lat = position.coords.latitude;
@@ -42,10 +47,10 @@ export default class extends Controller {
       
       fetch(url, {
         method: "POST",
-        headers: { "Accept": 'application/json', 'Content-Type': 'application/json', "X-CSRF-Token": csrfToken() },
+        headers: { "Accept": 'application/json', 'Content-Type': 'application/json'},
         body: JSON.stringify({lat: lat, long: long})
       })
-      .then(response => response.text())
+      .then(response => response.json())
       .then((data) => {
         this.buildMap(data)
       })
@@ -53,15 +58,28 @@ export default class extends Controller {
   }
 
   buildMap(array) {
+    console.log("CONECTOU mapa")
+    console.log(typeof array)
+    console.log(array[array.length - 1 ])
     this.map = new mapboxgl.Map({
-      container: this.element, // container ID
+      container: this.mapTarget, // container ID
       style: 'mapbox://styles/mapbox/streets-v10', // style URL
       center: array[array.length - 1 ], // starting position [lng, lat]
       zoom: 12 // starting zoom
     });
 
+    if(array.length > 1) {
+      const el = document.createElement('i')
+      el.className = this.iconValue
+      new mapboxgl.Marker(el)
+      .setLngLat(array[array.length - 1])
+      .addTo(this.map)
+    }
+      
+
+
     new mapboxgl.Marker()
-    .setLngLat(array[array.length - 1 ])
+    .setLngLat(array[0])
     .addTo(this.map)
 
     this.map.on('load', () => {
