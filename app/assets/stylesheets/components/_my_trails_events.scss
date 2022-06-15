@@ -5,7 +5,7 @@
   font-size: 24px;
 }
 
-.events_list_btn{
+.events_list_btn {
   padding: 10px;
   margin-top: 50px;
   // background-image: url(https://images.unsplash.com/photo-1530461215976-31923a646c83?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1494&q=80);
@@ -13,10 +13,25 @@
   // background-position: center;
   background-color: #d3d3d3;
   color: #24412F;
+  border-radius: 8px;
 }
 
 .events {
   font-family: 'Signika Negative', sans-serif;
   font-size: 32px;
   color: #24412F;
+}
+
+.trail-name {
+  font-family: 'Signika Negative', sans-serif;
+  font-size: 28px;
+  color: #24412F;
+}
+
+.my-trails {
+  padding: 10px;
+  margin-top: 50px;
+  background-color: #d3d3d3;
+  color: #24412F;
+  border-radius: 8px;
 }

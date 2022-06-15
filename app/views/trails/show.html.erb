@@ -1,10 +1,10 @@
 <%= @trail.name %>
 <%= @trail.distance %>
 <%= @trail.mode %>
-<%= link_to 'Create an Event', new_trail_event_path(@trail), class: 'btn btn-outline-success' %>
-<div id="map" 
-  data-controller="map" 
-  data-map-api-key-value=" <%= ENV['MAPBOX_API_KEY']%> " 
+<%= link_to 'Create an Event', new_trail_event_path(@trail), class: 'btn btn-login' %>
+<div id="map"
+  data-controller="map"
+  data-map-api-key-value=" <%= ENV['MAPBOX_API_KEY']%> "
   data-map-array-value="<%= @array %>"
-  data-map-marker-value="<%= @marker %>"></div>
-
+  data-map-marker-value="<%= @marker %>">
+</div>
