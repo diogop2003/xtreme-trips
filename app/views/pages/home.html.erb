@@ -1,5 +1,5 @@
 
-<% @trails.each do |t|  %>
+<% @trails.reverse_each do |t|  %>
   <div class="container mt-5 mb-5">
     <%= link_to trail_path(t), style: "text-decoration: none; color: black;" do %>
       <div class="row d-flex align-items-center justify-content-center">
