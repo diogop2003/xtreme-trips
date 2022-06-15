@@ -5,17 +5,19 @@
       <div class="row d-flex align-items-center justify-content-center">
           <div class="col-md-6">
               <div class="card">
-                  <div class="d-flex justify-content-between p-2 px-3">
+                  <div class="user-card  d-flex justify-content-between p-2 px-3">
                       <div class="d-flex flex-row align-items-center">
                         <img class="avatar-card" src="<%= cl_image_path t.user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face %>">
                         <p class="user-name"><%= t.user.name %></p>
                       </div>
                   </div>
                   <img src="<%= cl_image_path t.photo.key, width: 250, height: 250, crop: :thumb %>">
-                  <div class="p-2">
+                  <div class="info-card p-2 d-flex justify-content-between">
                       <h2><%= t.name %></h2>
-                      <p class="text-justify"><%= t.distance %>Km</p>
-                      <p class="text-justify"> <%= t.mode %> </p>
+                      <div class="text-card">
+                        <p class="text-justify"><%= t.distance %>Km</p>
+                        <p class="text-justify"> <%= t.mode %> </p>
+                      </div>
                       <hr>
                   </div>
                   <div class="d-flex justify-content-between align-items-center">
