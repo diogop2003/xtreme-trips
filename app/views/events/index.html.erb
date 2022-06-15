@@ -1,16 +1,11 @@
 <h1>Events</h1>
-  <%= link_to "Back", root_path, class: "btn btn-login" %>
-
 <% @events.each do |event| %>
   <div class="events_list_btn">
     <div class="events_list">
       <li style='list-style: none;'><%= event.name %></li>
-      <li style='list-style: none;'><%= event.date %></li>
+      <li style='list-style: none;'><%= event.date.strftime("%d-%m-%Y") %></li>
       <li style='list-style: none;'><%= event.trail.name %></li>
     </div>
-    <% if event.users.first == current_user %>
-      <%= link_to "Edit", edit_event_path(event), class: "btn btn-login" %>
-    <% end %>
     <% if event.users.include?(current_user) %>
       <%= link_to "Join", event_path(event), class: "btn btn-login" %>
     <% else %>
