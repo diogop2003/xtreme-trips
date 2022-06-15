@@ -1,7 +1,9 @@
   <li style='list-style: none;'><h1><%= @trail.name %></h1></li>
 <% trail_class = trail_type(@trail.mode) %>
-<li style='list-style: none;'><h4><i class="<%= trail_class %>"></i></h4></li>
-<li style='list-style: none;'><h4><%= @trail.distance %>km</h4></li>
+  <div class="indo-icon">
+    <li style='list-style: none;'><h4><i class="<%= trail_class %>"></i></h4></li>
+    <li style='list-style: none;'><h4><%= @trail.distance %>km</h4></li>
+  </div>
   <div class="card-btn">
     <%= link_to "Trail's events", trail_events_path(@trail), class: 'btn-card' %>
     <%= link_to 'Create an Event', new_trail_event_path(@trail), class: 'btn-card' %>
