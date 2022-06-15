@@ -1,9 +1,0 @@
-<h1>Trails</h1>
-<% @trails.each do |t| %>
-    <li style='list-style: none;'><%= t.name %></li>
-    <li style='list-style: none;'><%= t.distance %></li>
-    <li style='list-style: none;'>  <%= t.mode %></li>
-  <%= link_to "Show me more", trail_path(t), class: 'btn btn-login' %>
-  <%= link_to "Edit this trail", edit_trail_path(t), class: 'btn btn-login' %>
-  <%= link_to "Trail's events", trail_events_path(t), class: 'btn btn-login' %>
-<% end %>
