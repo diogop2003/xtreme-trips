@@ -1,13 +1,13 @@
-<%= @trail.name %>
-<%= @trail.distance %>
-<%= @trail.mode %>
-<%= link_to 'Create an Event', new_trail_event_path(@trail), class: 'btn btn-outline-success' %>
-<div id="map" 
-  data-controller="map" 
-  data-map-api-key-value=" <%= ENV['MAPBOX_API_KEY']%> " 
+<div class="card-btn">
+  <%= link_to "Trail's events", trail_events_path(@trail), class: 'btn-card' %>
+  <%= link_to 'Create an Event', new_trail_event_path(@trail), class: 'btn-card' %>
+</div>
+  <% if policy(@trail).edit? %>
+    <%= link_to "Edit this trail", edit_trail_path(@trail), class: 'btn-card', id: 'btn-edit' %>
+  <% end %>
+<div id="map"
+  data-controller="map"
+  data-map-api-key-value=" <%= ENV['MAPBOX_API_KEY']%> "
   data-map-array-value="<%= @array %>"
-  data-map-marker-value="<%= @marker %>"></div>
-<div data-controller="checkpoint" data-checkpoint-trail-id-value="<%= @trail.id %>">
-  <%= button_tag "Start", data: {action: "click->checkpoint#start"} %>
-  <%= button_tag "Stop", data: {action: "click->checkpoint#stop"} %>
+  data-map-marker-value="<%= @marker %>">
 </div>

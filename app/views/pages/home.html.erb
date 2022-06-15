@@ -8,13 +8,6 @@
           <p><%= t.mode %></p>
         </div>
       </div>
-
-      <div class="card-btn">
-        <% if policy(t).edit? %>
-          <%= link_to "Edit this trail", edit_trail_path(t), class: 'btn-card' %>
-        <% end %>
-        <%= link_to "Trail's events", trail_events_path(t), class: 'btn-card' %>
-      </div>
     <% end %>
   <% end %>
 </div>
