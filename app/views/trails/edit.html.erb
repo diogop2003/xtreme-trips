@@ -1,12 +1,13 @@
 <div class="container">
-  <h1><strong>Edit this trail:</strong></h1>
+  <div class="glass">
+    <h1><strong>Edit this trail:</strong></h1>
 
-  <%= simple_form_for @trail do |f| %>
-    <%= f.input :name %>
-    <%= f.input :distance %>
-    <%= f.input :mode, :collection => %w[Hiking Bike Horse Quad]%>
+    <%= simple_form_for @trail do |f| %>
+      <%= f.input :name %>
+      <%= f.input :distance %>
+      <%= f.input :mode, :collection => %w[Hiking Bike Horse Quad]%>
 
-    <%= f.button :submit, class: "btn btn-login" %>
-  <% end %>
-
+      <%= f.button :submit, class: "btn btn-login" %>
+    <% end %>
+  </div>
 </div>
