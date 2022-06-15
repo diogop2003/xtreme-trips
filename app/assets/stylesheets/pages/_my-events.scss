@@ -3,17 +3,36 @@
   display: block;
   position: relative;
   background-color: #f7f7f7;
-
-  .title-events h2{
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 50px;
-    color: #1C5428;
-    padding: 5px;
-
-  }
-
 }
+
+
+.title-trails{
+  text-align: center;
+}
+.title-trails img{
+  padding: 31px;
+  width: 377px;
+}
+
+
+.title-events{
+  text-align: center;
+}
+.title-events img{
+  padding: 31px;
+  width: 377px;
+}
+
+
+.events_list_btn {
+  padding: 10px;
+  margin-top: 0px;
+  background-color: #77B383;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
 
 
 .event-card{
@@ -55,6 +74,7 @@
   background-color: #77B383;
   color: #fff;
   font-size: 24px;
+  font-weight: bold;
 }
 
 .accordion-item:last-of-type {
