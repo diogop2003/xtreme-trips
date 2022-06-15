@@ -70,3 +70,12 @@
 .icon-color {
   color: #24412F;
 }
+
+.navbar-avatar {
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border-radius: 2px;
+  transition: box-shadow 0.15s ease-in-out;
+}
