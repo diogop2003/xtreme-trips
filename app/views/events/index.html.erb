@@ -1,5 +1,5 @@
 <h1>Events</h1>
-  <%= link_to "Back", root_path, class: "btn btn-outline-success" %>
+  <%= link_to "Back", root_path, class: "btn btn-login" %>
 
 <% @events.each do |event| %>
   <div class="events_list_btn">
@@ -9,12 +9,12 @@
       <li style='list-style: none;'><%= event.trail.name %></li>
     </div>
     <% if event.users.first == current_user %>
-      <%= link_to "Edit", edit_event_path(event), class: "btn btn-outline-success" %>
+      <%= link_to "Edit", edit_event_path(event), class: "btn btn-login" %>
     <% end %>
     <% if event.users.include?(current_user) %>
-      <%= link_to "Join", event_path(event), class: "btn btn-outline-success" %>
+      <%= link_to "Join", event_path(event), class: "btn btn-login" %>
     <% else %>
-      <%= link_to "Join", event_users_path(param: event), method: :post, class: "btn btn-outline-success" %>
+      <%= link_to "Join", event_users_path(param: event), method: :post, class: "btn btn-login" %>
     <% end %>
   </div>
 <% end %>
