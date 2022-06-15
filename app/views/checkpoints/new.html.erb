@@ -9,9 +9,9 @@
   id="map"
   data-map-target="map">
   </div>
-  <div >
-    <%= button_tag "Start", data: {action: "click->map#start"} %>
-    <%= button_tag "Stop", data: {action: "click->map#stop"} %>
+  <div class="start-stop">
+    <%= button_tag "Start", data: {action: "click->map#start"}, class: "btn-start" %>
+    <%= button_tag "Stop", data: {action: "click->map#stop"}, class: "btn-stop" %>
   </div>
 
 </div>
