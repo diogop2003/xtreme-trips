@@ -1,13 +1,22 @@
-<div class='container'>
-  <h1><strong>My trails:</strong></h1>
-  <div class='my-trails d-flex justify-content-between'>
-    <div class='trail-name'>
-      <% @trails.each do |trail| %>
-        <li style='list-style: none;'><%= trail.name %></li>
-    </div>
-    <div class='open-trail-btn'>
-        <%= link_to "Open Trail", trail_path(trail), class: "btn btn-login" %>
-      <% end %>
-    </div>
+<div class="events-container">
+  <div class="title-events ">
+    <h2><strong>My trails:</strong></h2>
+  </div>
+  <div class="accordion" id="accordionExample">
+    <% @trails.each do |trail| %>
+      <div class="accordion-item event-card">
+        <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<%= trail.id %>" aria-expanded="true" aria-controls="collapseOne">
+              <strong><%= trail.name %></strong>
+            </button>
+        </h2>
+        <div id="collapse-<%= trail.id %>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+              <%= link_to "Open Trail", trail_path(trail), class: "btn btn-login" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
+
