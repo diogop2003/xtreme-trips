@@ -3,7 +3,7 @@
     <h1><strong>Create an Event:</strong></h1>
     <%= simple_form_for [@trail, @event] do |f| %>
       <%= f.input :name %>
-      <%= f.input :date %>
+      <%= f.input :date, as: :string, required: true, input_html: {class: "datepicker"} %>
       <%= f.button :submit, class: "btn btn-login" %>
     <% end %>
   </div>

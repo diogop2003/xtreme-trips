@@ -1,4 +1,3 @@
-
 <div class="events-container">
   <div class="title-events ">
     <img src="https://see.fontimg.com/api/renderfont4/9Y350/eyJyIjoiZnMiLCJoIjo0NCwidyI6MTAwMCwiZnMiOjQ0LCJmZ2MiOiIjMTc1QTFDIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/RXZlbnRz/grooved-personal-use-regular.png" alt="Cool fonts">
@@ -12,12 +11,12 @@
             <strong><%= event.name %></strong>
           </button>
         </h2>
-      <div id="collapse-<%= event.id %>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div id="collapse-<%= event.id %>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
           <div class="accordion-body">
             <div class="events_list_btn">
               <div class="events_list">
                 <li style='list-style: none;'><%= event.name %></li>
-                <li style='list-style: none;'><%= event.date %></li>
+                <li style='list-style: none;'><%= event.date.strftime("%d-%m-%Y") %></li>
                 <li style='list-style: none;'><%= event.trail.name %></li>
               </div>
               <% if event.users.first == current_user %>
@@ -29,10 +28,10 @@
                 <%= link_to "Join", event_users_path(param: event), method: :post, class: "btn btn-login" %>
               <% end %>
             </div>
-          <% end %>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   </div>
   <%= link_to "Back", root_path, class: "btn btn-login-2" %>
 </div>
