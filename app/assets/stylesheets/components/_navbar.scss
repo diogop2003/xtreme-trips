@@ -46,3 +46,27 @@
   position: absolute;
   bottom: 15px;
 }
+
+.navbar-xtreme {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-xtreme .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-xtreme .navbar-brand img {
+  width: 130px;
+}
+
+.my-navbar {
+    display: flex;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.icon-color {
+  color: #24412F;
+}
