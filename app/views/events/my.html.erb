@@ -14,7 +14,7 @@
         <div id="collapse-<%= event.id %>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
           <div class="accordion-body">
             <div class="info">
-              <li style='list-style: none;'><%= event.date %></li>
+              <li style='list-style: none;'><%= event.date.strftime("%d-%m-%Y") %></li>
               <li style='list-style: none;'><%= event.trail.name %></li>
             </div>
               <%= link_to "Open Event", event_path(event), class: "btn-login" %>
