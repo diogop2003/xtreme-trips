@@ -9,7 +9,7 @@ export default class extends Controller {
     array: Array,
     icon: String,
   }
-  
+
   connect() {
     this.gpsBind = this.gps.bind(this)
     console.log("CONECTOU")
@@ -25,9 +25,9 @@ export default class extends Controller {
 
   start() {
     console.log("CONECTOU START")
-    
+
     if ("geolocation" in navigator) {
-      this.interval = setInterval( this.gpsBind, 10000)
+      this.interval = setInterval( this.gpsBind, 2000)
     } else {
       alert("I'm sorry, but geolocation services are not supported by your browser.");
     }
@@ -44,7 +44,7 @@ export default class extends Controller {
     navigator.geolocation.getCurrentPosition((position) => {
       const lat = position.coords.latitude;
       const long = position.coords.longitude;
-      
+
       fetch(url, {
         method: "POST",
         headers: { "Accept": 'application/json', 'Content-Type': 'application/json'},
@@ -52,7 +52,44 @@ export default class extends Controller {
       })
       .then(response => response.json())
       .then((data) => {
-        this.buildMap(data)
+        if(data.length > 1) {
+          if(this.userMarker){
+            this.userMarker.remove()
+          }
+          const coordinates = data[data.length - 1]
+          const el = document.createElement('i')
+          el.className = this.iconValue
+          this.userMarker = new mapboxgl.Marker(el)
+          .setLngLat(coordinates)
+          .addTo(this.map)
+          this.map.flyTo({center: coordinates})
+          this.map.removeLayer(`route`)
+          this.map.removeSource(`route`)
+          this.map.addSource('route', {
+            'type': 'geojson',
+            'data': {
+              'type': 'Feature',
+              'properties': {},
+              'geometry': {
+                'type': 'LineString',
+                'coordinates': data
+              }
+            }
+          });
+          this.map.addLayer({
+            'id': 'route',
+            'type': 'line',
+            'source': 'route',
+            'layout': {
+              'line-join': 'round',
+              'line-cap': 'round'
+            },
+            'paint': {
+              'line-color': '#ed6498',
+              'line-width': 4
+            }
+          });
+        }
       })
     });
   }
@@ -68,22 +105,12 @@ export default class extends Controller {
       zoom: 12 // starting zoom
     });
 
-    if(array.length > 1) {
-      const el = document.createElement('i')
-      el.className = this.iconValue
-      new mapboxgl.Marker(el)
-      .setLngLat(array[array.length - 1])
-      .addTo(this.map)
-    }
-      
-
-
     new mapboxgl.Marker()
     .setLngLat(array[0])
     .addTo(this.map)
 
     this.map.on('load', () => {
-      this.map.addSource('route', {
+      this.routeSource = this.map.addSource('route', {
         'type': 'geojson',
         'data': {
           'type': 'Feature',
@@ -94,7 +121,7 @@ export default class extends Controller {
           }
         }
       });
-  
+      console.log(this.routeSource)
       this.map.addLayer({
         'id': 'route',
         'type': 'line',
