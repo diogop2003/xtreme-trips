@@ -11,7 +11,11 @@
                         <p class="user-name"><%= t.user.name %></p>
                       </div>
                   </div>
-                  <img src="<%= cl_image_path t.photo.key, width: 250, height: 250, crop: :thumb %>">
+                  <% if t.photo.attached? %>
+                    <img src="<%= cl_image_path t.photo.key, width: 250, height: 250, crop: :thumb %>">
+                  <% else %>
+                    <%= image_tag('trilha.jpg') %>
+                  <% end %>
                   <div class="info-card p-2 d-flex justify-content-between">
                       <h2><%= t.name %></h2>
                       <div class="text-card">
