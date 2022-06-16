@@ -179,10 +179,6 @@ array_h3.each do |coordinates|
   Checkpoint.create(trail: trail_h3, user: heitor, latitude: coordinates[0], longitude: coordinates[1])
 end
 
-array_h.each do |coordinates|
-  Checkpoint.create(trail: trail_h, user: heitor, latitude: coordinates[0], longitude: coordinates[1])
-end
-
 array_d = [
   [-22.952443181847034, -43.16085036901502],
   [-22.952534884442453, -43.16149436526352],
