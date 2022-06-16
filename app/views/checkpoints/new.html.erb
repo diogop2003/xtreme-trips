@@ -1,11 +1,11 @@
-<div class="map-card" 
-  id="map-checkpoint" 
+<div class="map-card"
+  id="map-checkpoint"
   data-controller="map"
   data-map-api-key-value=" <%= ENV['MAPBOX_API_KEY']%> "
   data-map-icon-value="<%= trail_type(@trail.mode) %>"
   data-map-trail-id-value="<%= @trail.id %>"
   data-map-array-value="<%= @array.present? ? @array : [] %>">
-  <div 
+  <div
   id="map"
   data-map-target="map">
   </div>
@@ -13,5 +13,6 @@
     <%= button_tag "Start", data: {action: "click->map#start"}, class: "btn-start" %>
     <%= button_tag "Stop", data: {action: "click->map#stop"}, class: "btn-stop" %>
   </div>
+  <%= link_to "Return to your trail", trail_path(@trail), class: "btn btn-login-return" %>
 
 </div>
