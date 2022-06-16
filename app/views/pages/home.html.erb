@@ -12,7 +12,7 @@
                       </div>
                   </div>
                   <% if t.photo.attached? %>
-                    <img src="<%= cl_image_path t.photo.key, width: 250, height: 250, crop: :thumb %>">
+                    <img src="<%= cl_image_path t.photo.key, width: 800, height: 800, crop: :thumb %>">
                   <% else %>
                     <%= image_tag('trilha.jpg') %>
                   <% end %>

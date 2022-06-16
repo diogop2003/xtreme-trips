@@ -109,6 +109,13 @@ export default class extends Controller {
     .setLngLat(array[0])
     .addTo(this.map)
 
+    const coordinates = array[array.length - 1]
+    const el = document.createElement('i')
+    el.className = this.iconValue
+    this.userMarker = new mapboxgl.Marker(el)
+    .setLngLat(coordinates)
+    .addTo(this.map)
+
     this.map.on('load', () => {
       this.routeSource = this.map.addSource('route', {
         'type': 'geojson',
