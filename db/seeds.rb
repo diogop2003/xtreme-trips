@@ -1,21 +1,27 @@
 
 puts "Creating Users..."
 
-daniel = User.create(email: "dnl.carvalho@gmail.com", password: "123123", name: "daniel")
+
 diogo = User.create(email: 'diogo@gmail.com', password: '123123', name: 'Diogo')
 file = URI.open('https://res.cloudinary.com/diogop2003/image/upload/c_thumb,g_face,h_150,w_150/v1/production/wfpzong07oezbjpcd12lg89lk57s')
 diogo.photo.attach(io: file, filename: 'diogo.png', content_type: 'image/png')
 
 heitor = User.create(email: "heitor@gmail.com", password: "123123", name: "Heitor")
-
 file = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1650513728/hl8yhhe6rtxt48j423zm.jpg')
 heitor.photo.attach(io: file, filename: 'heitor.png', content_type: 'image/png')
+
+daniel = User.create(email: "dnl.carvalho@gmail.com", password: "123123", name: "daniel")
 file = URI.open('https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1651492797/cwwnnzvhfnbltkftmrfh.jpg')
 daniel.photo.attach(io: file, filename: 'daniel.png', content_type: 'image/png')
+
+rafael = User.create(email: "rafael@gmail.com", password: "123123", name: "Rafael")
+file = URI.open('https://res.cloudinary.com/diogop2003/image/upload/c_thumb,g_face,h_150,w_150/v1/production/4cwkokno6q4to5lr5y4ew0k4p81x')
+rafael.photo.attach(io: file, filename: 'rafael.png', content_type: 'image/png')
 
 puts "Users created"
 
 puts "Creating Trails..."
+
 trail_dg = Trail.create(name: 'Trilha Pedra da Gávea', distance: 6.0, mode: 'Hiking', user: diogo)
 file = URI.open('http://s2.glbimg.com/gaNhE8TYkLAWgzz3vf_qmObqlfs=/e.glbimg.com/og/ed/f/original/2014/01/15/bra_1334-web62_copy.jpg')
 trail_dg.photo.attach(io: file, filename: 'trail_dg.png', content_type: 'image/png')
@@ -38,14 +44,16 @@ file = URI.open('https://altamontanha.com/wp-content/uploads/2016/03/Vale-do-Pat
 trail_h3.photo.attach(io: file, filename: 'trail_h3.png', content_type: 'image/png')
 
 trail_d = Trail.create(name: "Trilha do Morro da Urca", distance: 5.0, mode: "Hiking", user: daniel)
-
 file = URI.open('http://trilhatranscarioca.com.br/wp-content/uploads/2016/09/MCV_5708-1.jpg')
 trail_d.photo.attach(io: file, filename: 'trail_d.png', content_type: 'image/png')
 
 trail_d2 = Trail.create(name: "Parque Municipal (Trilha da Pontinha)", distance: 6.2, mode: "Hiking", user: daniel)
-
 file = URI.open('https://lh5.googleusercontent.com/p/AF1QipNGkL-Fn7el-14Byg5TRP0go84wrTDXnWWLLgZz=w296-h202-n-k-no-v1')
 trail_d2.photo.attach(io: file, filename: 'trail_d.png', content_type: 'image/png')
+
+trail_r = Trail.create(name: "Trilha Le WaGoogle", distance: 5.6, mode: "Horse", user: rafael)
+file = URI.open('https://www.projetodraft.com/wp-content/uploads/2016/09/Campus-Sao-Paulo-14.jpg')
+trail_r.photo.attach(io: file, filename: 'trail_r.png', content_type: 'image/png')
 
 puts "Trails created"
 
@@ -212,7 +220,90 @@ array_d2.each do |coordinates|
   Checkpoint.create(trail: trail_d2, user: daniel, latitude: coordinates[0], longitude: coordinates[1])
 end
 
+array_d = [
+  [-22.952443181847034, -43.16085036901502],
+  [-22.952534884442453, -43.16149436526352],
+  [-22.952822218838968, -43.16168690022441],
+  [-22.95310343914677, -43.162071970146194],
+  [-22.95331741072848, -43.16223130942418],
+  [-22.95344953364382, -43.16269524823645],
+  [-22.9534308363976, -43.16322268863966],
+  [-22.953664203571154, -43.16364185621495],
+  [-22.953895538515187, -43.164445783180916],
+  [-22.953864155533484, -43.16459376863582],
+  [-22.95378167815686, -43.164723558868744]
+]
+array_d.each do |coordinates|
+  Checkpoint.create(trail: trail_d, user: daniel, latitude: coordinates[0], longitude: coordinates[1])
+end
 
+array_r = [
+  [-23.551845273161305, -46.68928352136443],
+  [-23.551733145149974, -46.68913525819155],
+  [-23.551345793102183, -46.68938730558545],
+  [-23.551165707989522, -46.689531862179],
+  [-23.550907472286884, -46.689657885880315],
+  [-23.5507647628741, -46.68979873589455],
+  [-23.550588074815053, -46.6896727121976],
+  [-23.550309450854783, -46.6895541016593],
+  [-23.55003752348796, -46.6892639678637],
+  [-23.54991431392799, -46.6892639678637],
+  [-23.549825329173977, -46.68904742841474],
+  [-23.54970896440479, -46.688591948884174],
+  [-23.549572064527677, -46.68830074065651],
+  [-23.54926403932065, -46.68780045986065],
+  [-23.54909291389377, -46.68747191724842],
+  [-23.54876739361431, -46.687105902170735],
+  [-23.54823628406718, -46.68702007148273],
+  [-23.54789204525172, -46.68695569846673],
+  [-23.547705172374442, -46.686966427302735],
+  [-23.547862539025605, -46.686633833386736],
+  [-23.548049411679187, -46.68605447624275],
+  [-23.548472333019685, -46.68533564423077],
+  [-23.54896410030949, -46.684799202430774],
+  [-23.549485371628272, -46.68426276063078],
+  [-23.549632900871508, -46.68342591142279],
+  [-23.54962306559222, -46.68279291008386],
+  [-23.549672241973536, -46.68141961907589],
+  [-23.549898453090588, -46.6799283108719],
+  [-23.550459061581055, -46.67853356216252],
+  [-23.550911480717993, -46.677857645494534],
+  [-23.551501590317592, -46.67694569442796],
+  [-23.55215070779325, -46.67572260712398],
+  [-23.552357244499625, -46.675164707651994],
+  [-23.551767138763264, -46.67653799865997],
+  [-23.552229388481567, -46.675583132255994],
+  [-23.553321078205364, -46.673072584620854],
+  [-23.554461933441914, -46.67007923935494],
+  [-23.55601584102239, -46.666570909961656],
+  [-23.556094519396904, -46.66616321419367],
+  [-23.555701127053307, -46.6644251427617],
+  [-23.55555360462087, -46.664028175829706],
+  [-23.555533934950695, -46.6638994297977],
+  [-23.555465091081906, -46.66378141260171],
+  [-23.55547492592252, -46.66354537820971],
+  [-23.555494595601527, -46.66335225916171],
+  [-23.555543769786144, -46.66325569963772],
+  [-23.55566178775419, -46.66305185175372],
+  [-23.556861631132353, -46.66166783187191],
+  [-23.557294358824237, -46.66116357657991],
+  [-23.558887571247187, -46.659500606991934],
+  [-23.560008709135978, -46.65815950249196],
+  [-23.561326525683985, -46.656700380786205],
+  [-23.564325984198728, -46.653127678368435],
+  [-23.567659728214, -46.64909363601253],
+  [-23.567905576230274, -46.6489112457862],
+  [-23.568593948110852, -46.64796710821822],
+  [-23.569006969507452, -46.64748431059822],
+  [-23.569833008404157, -46.648203142610214],
+  [-23.57103272231106, -46.64923311086619],
+  [-23.571199894690395, -46.649447687586196],
+  [-23.570963886563586, -46.64972663732218],
+  [-23.57089505078005, -46.64990902753418]
+]
+array_r.each do |coordinates|
+  Checkpoint.create(trail: trail_r, user: daniel, latitude: coordinates[0], longitude: coordinates[1])
+end
 
 
 puts "Checkpoints created"
