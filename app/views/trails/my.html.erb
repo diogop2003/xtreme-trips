@@ -1,21 +1,27 @@
-<div class="events-container">
-  <div class="title-trails">
-    <img src="https://see.fontimg.com/api/renderfont4/9Y350/eyJyIjoiZnMiLCJoIjo0NCwidyI6MTAwMCwiZnMiOjQ0LCJmZ2MiOiIjMTc1QTFDIiwiYmdjIjoiI0ZBRjlGOSIsInQiOjF9/bXkgdHJhaWxz/grooved-personal-use-regular.png" alt="Cool fonts">
-  </div>
-  <div class="accordion" id="accordionExample">
-    <% @trails.each do |trail| %>
-      <div class="accordion-item event-card">
-        <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<%= trail.id %>" aria-expanded="true" aria-controls="collapseOne">
-              <strong><%= trail.name %></strong>
-            </button>
-        </h2>
-        <div id="collapse-<%= trail.id %>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-              <%= link_to "Open Trail", trail_path(trail), class: "btn btn-login" %>
-          </div>
+<div class="row d-flex align-items-center justify-content-center">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="events-container">
+        <div class="title-trails">
+          <img src="https://see.fontimg.com/api/renderfont4/9Y350/eyJyIjoiZnMiLCJoIjo0NCwidyI6MTAwMCwiZnMiOjQ0LCJmZ2MiOiIjMTc1QTFDIiwiYmdjIjoiI0ZBRjlGOSIsInQiOjF9/bXkgdHJhaWxz/grooved-personal-use-regular.png" alt="Cool fonts">
+        </div>
+        <div class="accordion" id="accordionExample">
+          <% @trails.each do |trail| %>
+            <div class="accordion-item event-card">
+              <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<%= trail.id %>" aria-expanded="true" aria-controls="collapseOne">
+                    <strong><%= trail.name %></strong>
+                  </button>
+              </h2>
+              <div id="collapse-<%= trail.id %>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <%= link_to "Open Trail", trail_path(trail), class: "btn btn-login" %>
+                </div>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>
