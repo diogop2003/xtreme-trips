@@ -4,7 +4,7 @@
     <%= link_to trail_path(t), style: "text-decoration: none; color: black;" do %>
       <div class="row d-flex align-items-center justify-content-center">
           <div class="col-md-6">
-              <div class="card">
+            <div class="card mt-5">
                   <div class="user-card  d-flex justify-content-between p-2 px-3">
                       <div class="d-flex flex-row align-items-center">
                         <img class="avatar-card" src="<%= cl_image_path t.user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face %>">
