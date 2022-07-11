@@ -18,7 +18,7 @@
                   <div class="events_list_btn">
                     <div class="events_list">
                       <li style='list-style: none;'><%= event.name %></li>
-                      <li style='list-style: none;'><%= event.date.strftime("%d-%m-%Y") %></li>
+                      <li style='list-style: none;'><%= event.date.strftime("%d/%m/%Y") %></li>
                       <li style='list-style: none;'><%= event.trail.name %></li>
                     </div>
                     <% if event.users.first == current_user %>

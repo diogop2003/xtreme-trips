@@ -7,6 +7,30 @@
     <div class="navbar-avatar" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <% if user_signed_in? %>
         <%= cl_image_tag current_user.photo.key, width: 150, height: 150, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-end px-3" aria-labelledby="navbarDropdown">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <%= link_to new_trail_path, class: "nav-link" do %>
+                  <i class="fas fa-plus-circle icon-color"></i>
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to my_events_path, class: "nav-link" do %>
+                  <i class="fas fa-users icon-color"></i>
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to my_trails_path, class: "nav-link" do %>
+                  <i class="fas fa-map icon-color"></i>
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
+                  <i class="fas fa-sign-out-alt icon-color"></i>
+                <% end %>
+              </li>
+            </ul>
+          </div>
       <% else %>
         <%= link_to new_user_session_path do %>
           <button class="cta">
@@ -17,33 +41,6 @@
           </button>
         <% end %>
       <% end %>
-    </div>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="my-navbar me-auto justify-content-around">
-        <% if user_signed_in? %>
-          <li class="nav-item">
-            <%= link_to new_trail_path, class: "nav-link" do %>
-              <i class="fas fa-plus-circle icon-color"></i>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to my_events_path, class: "nav-link" do %>
-              <i class="fas fa-users icon-color"></i>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to my_trails_path, class: "nav-link" do %>
-              <i class="fas fa-map icon-color"></i>
-            <% end %>
-          </li>
-          <li class="nav-item">
-            <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
-              <i class="fas fa-sign-out-alt icon-color"></i>
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
     </div>
   </div>
 </div>
